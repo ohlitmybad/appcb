@@ -1,0 +1,1911 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>	
+
+	<meta name="viewport" content="width=device-width, initial-scale=0.79, maximum-scale=0.79">
+
+
+  <link rel="stylesheet" href="path/to/autocomplete.css">
+
+  <!-- Include JavaScript for the autocomplete library -->
+  <script src="path/to/autocomplete.js"></script>
+
+<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+
+
+<defs>
+<style>
+
+
+
+	
+	
+  /* Dark Mode Styles */
+  body.dark-mode,
+  body.dark-mode * {
+    color: #f2f2f2;
+  }
+
+  body.dark-mode {
+    background-color: #0F0F0E;
+  }
+
+ .dark-mode .x-button {
+    background-color: #333333;
+}
+
+
+
+
+  body.dark-mode svg text.label {
+    /* Override SVG text color */
+    fill: #bcbcbc;
+  }
+
+
+
+ .dark-mode-toggle {
+    position: absolute;
+    top: 52px;
+    left: 433.9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 26.8px;
+    height: 26.8px;
+    background-color: #e0e0de;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  }
+
+
+.dark-mode-toggle .toggle-icon::before {
+  font-family: "Ionicons";
+  content: "\f467"; /* Unicode value for the moon icon in Ionicons */
+  font-size: 26px; /* Adjust the value as needed */
+}
+
+body.dark-mode .dark-mode-toggle {
+  background-color: #333333;
+}
+
+
+
+
+body.dark-mode .dark-mode-toggle .toggle-icon::before {
+  font-family: "Ionicons";
+  content: "\f3b0"; /* Unicode value for the sun icon in Ionicons */
+  font-size: 16px; /* Adjust the value as needed */
+}
+
+
+
+body.dark-mode .toggle-slider {
+  background-color: #2B2C2E; /* Darker background color for dark mode */
+}
+
+body.dark-mode input:checked + .toggle-slider:before {
+  background-color: #ccc; /* Darker background color for dark mode */
+}
+
+
+.icon2::before {
+  content: "\f118";
+  font-family: "Ionicons"; /* Replace with the appropriate font */
+font-size: 22px;
+}
+
+
+body.dark-mode #searchInput1 {
+    color: #000; /* Specify the desired text color for dark mode */
+background-color : #999;
+  }
+	
+ body.dark-mode	  #searchInput1::placeholder {
+    color: #fff; /* Specify the desired color for the placeholder text */
+  }
+
+ body.dark-mode	  #searchButton1 {
+    color: #fff !important; /* Specify the desired color for the placeholder text */
+background-color : #333333;
+  }
+
+
+text {
+  font-family: Arial;
+}
+
+
+.x-cell {
+  position: absolute;
+left: 380px;
+}
+
+
+
+
+.result-color-blue {
+  color: #3062FB !important;
+  stroke: #3062FB;
+  fill: #3062FB;
+  fill-opacity: 0.02;
+}
+
+
+.result-color-pink {
+  color: #F62681 !important;
+stroke: #F62681;
+fill: #F62681;
+fill-opacity: 0.02;
+
+}
+
+.result-color-orange {
+  color: #96F18D !important;
+stroke: #96F18D;
+fill: #96F18D;
+fill-opacity: 0.02;
+}
+
+.result-color-green {
+  color: #FFCF5F !important;
+stroke: #FFCF5F;
+fill: #FFCF5F;
+fill-opacity: 0.02;
+}
+
+
+
+
+.result-color-bleu {
+  color: #900C3F  !important;
+  stroke: #900C3F ;
+  fill: #900C3F ;
+  fill-opacity: 0.02;
+}
+
+
+.result-color-rose {
+  color: #F09710 !important;
+stroke: #F09710;
+fill: #F09710;
+fill-opacity: 0.02;
+
+}
+
+
+.result-color-1 {
+  color: #3062FB !important;
+  stroke: #3062FB;
+  fill: #3062FB;
+  fill-opacity: 0.02;
+}
+
+
+.result-color-2 {
+  color: #F62681 !important;
+stroke: #F62681;
+fill: #F62681;
+fill-opacity: 0.02;
+
+}
+
+.result-color-3 {
+  color: #96F18D !important;
+stroke: #96F18D;
+fill: #96F18D;
+fill-opacity: 0.02;
+}
+
+.result-color-4 {
+  color: #FFCF5F !important;
+stroke: #FFCF5F;
+fill: #FFCF5F;
+fill-opacity: 0.02;
+}
+
+
+.result-color-5 {
+  color: #900C3F  !important;
+  stroke: #900C3F ;
+  fill: #900C3F ;
+  fill-opacity: 0.02;
+}
+
+
+.result-color-6 {
+  color: #F09710 !important;
+stroke: #F09710;
+fill: #F09710;
+fill-opacity: 0.02;
+
+}
+.result-color-7 {
+  color: #3062FB !important;
+  stroke: #3062FB;
+  fill: #3062FB;
+  fill-opacity: 0.02;
+}
+
+
+.result-color-8 {
+  color: #F62681 !important;
+stroke: #F62681;
+fill: #F62681;
+fill-opacity: 0.02;
+
+}
+
+.result-color-9 {
+  color: #96F18D !important;
+stroke: #96F18D;
+fill: #96F18D;
+fill-opacity: 0.02;
+}
+
+.result-color-10 {
+  color: #FFCF5F !important;
+stroke: #FFCF5F;
+fill: #FFCF5F;
+fill-opacity: 0.02;
+}
+
+
+.result-color-11 {
+  color: #900C3F  !important;
+  stroke: #900C3F ;
+  fill: #900C3F ;
+  fill-opacity: 0.02;
+}
+
+
+.result-color-12 {
+  color: #F09710 !important;
+stroke: #F09710;
+fill: #F09710;
+fill-opacity: 0.02;
+
+}
+
+
+.result-color-13 {
+  color: #3062FB !important;
+  stroke: #3062FB;
+  fill: #3062FB;
+  fill-opacity: 0.02;
+}
+
+
+.result-color-14 {
+  color: #F62681 !important;
+stroke: #F62681;
+fill: #F62681;
+fill-opacity: 0.02;
+
+}
+
+.result-color-15 {
+  color: #96F18D !important;
+stroke: #96F18D;
+fill: #96F18D;
+fill-opacity: 0.02;
+}
+
+.result-color-16 {
+  color: #FFCF5F !important;
+stroke: #FFCF5F;
+fill: #FFCF5F;
+fill-opacity: 0.02;
+}
+
+
+.result-color-17 {
+  color: #900C3F  !important;
+  stroke: #900C3F ;
+  fill: #900C3F ;
+  fill-opacity: 0.02;
+}
+
+
+.result-color-18 {
+  color: #F09710 !important;
+stroke: #F09710;
+fill: #F09710;
+fill-opacity: 0.02;
+
+}
+.result-color-19 {
+  color: #3062FB !important;
+  stroke: #3062FB;
+  fill: #3062FB;
+  fill-opacity: 0.02;
+}
+
+
+.result-color-20 {
+  color: #F62681 !important;
+stroke: #F62681;
+fill: #F62681;
+fill-opacity: 0.02;
+
+}
+
+.result-color-21 {
+  color: #96F18D !important;
+stroke: #96F18D;
+fill: #96F18D;
+fill-opacity: 0.02;
+}
+
+.result-color-22 {
+  color: #FFCF5F !important;
+stroke: #FFCF5F;
+fill: #FFCF5F;
+fill-opacity: 0.02;
+}
+
+
+.result-color-23 {
+  color: #900C3F  !important;
+  stroke: #900C3F ;
+  fill: #900C3F ;
+  fill-opacity: 0.02;
+}
+
+
+.result-color-24 {
+  color: #F09710 !important;
+stroke: #F09710;
+fill: #F09710;
+fill-opacity: 0.02;
+
+}
+
+
+.result-color-25 {
+  color: #3062FB !important;
+  stroke: #3062FB;
+  fill: #3062FB;
+  fill-opacity: 0.02;
+}
+
+
+.result-color-26 {
+  color: #F62681 !important;
+stroke: #F62681;
+fill: #F62681;
+fill-opacity: 0.02;
+
+}
+
+.result-color-27 {
+  color: #96F18D !important;
+stroke: #96F18D;
+fill: #96F18D;
+fill-opacity: 0.02;
+}
+
+.result-color-28 {
+  color: #FFCF5F !important;
+stroke: #FFCF5F;
+fill: #FFCF5F;
+fill-opacity: 0.02;
+}
+
+
+.result-color-29 {
+  color: #900C3F  !important;
+  stroke: #900C3F ;
+  fill: #900C3F ;
+  fill-opacity: 0.02;
+}
+
+
+.result-color-30 {
+  color: #F09710 !important;
+stroke: #F09710;
+fill: #F09710;
+fill-opacity: 0.02;
+
+}
+.result-color-31 {
+  color: #3062FB !important;
+  stroke: #3062FB;
+  fill: #3062FB;
+  fill-opacity: 0.02;
+}
+
+
+.result-color-32 {
+  color: #F62681 !important;
+stroke: #F62681;
+fill: #F62681;
+fill-opacity: 0.02;
+
+}
+
+.result-color-33 {
+  color: #96F18D !important;
+stroke: #96F18D;
+fill: #96F18D;
+fill-opacity: 0.02;
+}
+
+.result-color-34 {
+  color: #FFCF5F !important;
+stroke: #FFCF5F;
+fill: #FFCF5F;
+fill-opacity: 0.02;
+}
+
+
+.result-color-35 {
+  color: #900C3F  !important;
+  stroke: #900C3F ;
+  fill: #900C3F ;
+  fill-opacity: 0.02;
+}
+
+
+.result-color-36 {
+  color: #F09710 !important;
+stroke: #F09710;
+fill: #F09710;
+fill-opacity: 0.02;
+
+}
+
+
+.result-color-37 {
+  color: #3062FB !important;
+  stroke: #3062FB;
+  fill: #3062FB;
+  fill-opacity: 0.02;
+}
+
+
+.result-color-38 {
+  color: #F62681 !important;
+stroke: #F62681;
+fill: #F62681;
+fill-opacity: 0.02;
+
+}
+
+.result-color-39 {
+  color: #96F18D !important;
+stroke: #96F18D;
+fill: #96F18D;
+fill-opacity: 0.02;
+}
+
+.result-color-40 {
+  color: #FFCF5F !important;
+stroke: #FFCF5F;
+fill: #FFCF5F;
+fill-opacity: 0.02;
+}
+
+
+.result-color-41 {
+  color: #900C3F  !important;
+  stroke: #900C3F ;
+  fill: #900C3F ;
+  fill-opacity: 0.02;
+}
+
+
+.result-color-42 {
+  color: #F09710 !important;
+stroke: #F09710;
+fill: #F09710;
+fill-opacity: 0.02;
+
+}
+.result-color-43 {
+  color: #3062FB !important;
+  stroke: #3062FB;
+  fill: #3062FB;
+  fill-opacity: 0.02;
+}
+
+
+.result-color-44 {
+  color: #F62681 !important;
+stroke: #F62681;
+fill: #F62681;
+fill-opacity: 0.02;
+
+}
+
+.result-color-45 {
+  color: #96F18D !important;
+stroke: #96F18D;
+fill: #96F18D;
+fill-opacity: 0.02;
+}
+
+.result-color-46 {
+  color: #FFCF5F !important;
+stroke: #FFCF5F;
+fill: #FFCF5F;
+fill-opacity: 0.02;
+}
+
+
+.result-color-47 {
+  color: #900C3F  !important;
+  stroke: #900C3F ;
+  fill: #900C3F ;
+  fill-opacity: 0.02;
+}
+
+
+.result-color-48 {
+  color: #F09710 !important;
+stroke: #F09710;
+fill: #F09710;
+fill-opacity: 0.02;
+
+}
+
+
+           
+svg:nth-of-type(1) {
+  position: absolute;
+  top: 142px;
+  left: 34px;
+  width: 417px;
+  height: 417px;
+}
+
+svg:nth-of-type(2) {
+  position: absolute;
+  top: 110px;
+  left: 2px;
+
+}
+
+
+table {
+  font-family: Arial;
+  border-radius: 0px;
+margin-top: 0%;
+margin-left: 0%;
+  table-layout: auto; /* Set the table layout to auto */
+ 
+}
+
+
+
+
+
+#searchInput1 {
+  width: 406px;
+height: 30px;
+}
+
+#searchInput1::placeholder {
+    font-size : 18px; /* Specify the desired color for the placeholder text */
+  }
+
+
+#searchButton1 {
+  width: 32px;
+color: black !important;
+height: 32px;
+cursor: pointer;
+}
+
+
+	.name {
+  font-family: Arial, sans-serif !important;
+font-size: 13px;
+position: relative;
+top: 10px;
+  color: black !important;
+cursor: pointer;
+}
+
+.dark-mode .matching-names-container {
+  background-color: grey;
+}
+
+
+     img {
+            width: 31px;
+position: absolute;
+top: 488px;
+pointer-events: none;
+z-index: 40000; 
+left: 14px;
+opacity: .8;
+        }	
+	
+
+tr {
+  display: flex;
+}
+
+td {
+display: flex;
+}
+
+</style>
+</defs>
+
+
+<script type="text/javascript">
+  window._taboola = window._taboola || [];
+  _taboola.push({article:'auto'});
+  !function (e, f, u, i) {
+    if (!document.getElementById(i)){
+      e.async = 1;
+      e.src = u;
+      e.id = i;
+      f.parentNode.insertBefore(e, f);
+    }
+  }(document.createElement('script'),
+  document.getElementsByTagName('script')[0],
+  '//cdn.taboola.com/libtrc/datamb-pub-pub/loader.js',
+  'tb_loader_script');
+  if(window.performance && typeof window.performance.mark == 'function')
+    {window.performance.mark('tbl_ic');}
+</script>
+
+	
+</head>
+
+<body>
+  <input type="text" id="searchInput1" class="search-bar" placeholder="Enter centreback name..." />
+  <input type="button" id="searchButton1" value="+&nbsp;" />
+  <br />
+  <div id="resultsTable"></div>
+<div id="matchingNames"></div>
+ <div class="dark-mode-toggle" onclick="toggleDarkMode()">
+    <div class="toggle-icon"></div>
+  </div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+      <g class="radar_label" data-type="Physicality" data-idx="0">
+      <text class="label" transform="translate(149, 35) rotate(-1)">Physicality</text></g>
+    <g class="radar_label" data-type="Defending" data-idx="6">
+      <text class="label" transform="matrix(0.5, -0.86, 0.86, 0.5, 39.89, 137.88) rotate(4.87)">Defending</text>
+    </g>
+    <g class="radar_label" data-type="Counters" data-idx="5">
+      <text class="label" transform="translate(49.38 253.78) rotate(-103)">Counters</text>
+    </g>
+    <g class="radar_label" data-type="Possession" data-idx="4">
+      <text class="label" transform="translate(98.19 324.04) rotate(19.3)">Possession</text>
+    </g>
+    <g class="radar_label" data-type="Attacking" data-idx="3">
+      <text class="label" transform="translate(245.36 342.52) rotate(-25.32)">Attacking</text>
+    </g>
+    <g class="radar_label" data-type=“Goals” data-idx="2">
+      <text class="label" transform="translate(352.56 188.26) rotate(100.11)">Goals</text>
+    </g>
+    <g class="radar_label" data-type="Pressing" data-idx="1">
+      <text class="label" transform="translate(283.82 62.68) rotate(48.09)">Pressing</text>
+    </g>
+    
+  </svg>					
+
+
+<svg width="390" height="390" class="radar"><g transform="translate(231.77,225.77)"><g class="axisWrapper">
+
+<circle class="blackCircle" r="150" style="fill:none; stroke:#D3D3D3; stroke-width:1;"></circle>
+<circle class="gridCircle" r="150" style="fill: rgb(16, 135, 188); fill-opacity: 0.03;"></circle>
+<circle class="gridCircle" r="128" style="fill: rgb(16, 135, 188); fill-opacity: 0.03;"></circle>
+<circle class="gridCircle" r="90" style="fill: rgb(16, 135, 188); fill-opacity: 0.03;"></circle>
+<circle class="gridCircle" r="60" style="fill: rgb(16, 135, 188); fill-opacity: 0.03;"></circle>
+<circle class="gridCircle" r="30" style="fill: rgb(16, 135, 188); fill-opacity: 0.03;"></circle></g>
+                                
+  
+ 
+<line x1="0" y1="0" x2="7.37" y2="149.57" stroke="#D3D3D3" stroke-width="1" transform="translate(-7.36, -149.8)"></line>
+<line x1="0" y1="0" x2="-112.26" y2="99.60" stroke="#D3D3D3" stroke-width="1" transform="translate(112.11, -99.6)"></line>
+<line x1="0" y1="0" x2="-147.68" y2="-25.48" stroke="#D3D3D3" stroke-width="1" transform="translate(147.82, 25.44)"></line>
+<line x1="0" y1="0" x2="-72.34" y2="-131.68" stroke="#D3D3D3" stroke-width="1" transform="translate(72.34, 131.4)"></line>
+<line x1="0" y1="0" x2="57.50" y2="-138.88" stroke="#D3D3D3" stroke-width="1" transform="translate(-57.53, 138.51)"></line>
+<line x1="0" y1="0" x2="144.16" y2="-41.52" stroke="#D3D3D3" stroke-width="1" transform="translate(-144.14, 41.48)"></line>
+<line x1="0" y1="0" x2="122.14" y2="86.58" stroke="#D3D3D3" stroke-width="1" transform="translate(-122.357, -86.768)"></line>
+
+
+<g class="radarWrapper"></g>
+<g class="radarWrapper2"></g>
+</g>
+
+
+
+	 <img src="https://i.imgur.com/UurMbGS.png" alt="Logo">
+
+<script>
+const names = [      "J. Timber,21,Ajax", "Danilo,31,Juventus", "N. Otamendi,35,Benfica", "J. Egan,30,Sheffield United", "D. Hancko,25,Feyenoord", "N. Gudelj,31,Sevilla", "A. Trusty,24,Arsenal", "T. Alderweireld,34,Antwerp", "C. Burgess,31,Union Saint-Gilloise", "P. Chatzidiakos,26,AZ", "Éder Militão,25,Real Madrid", "V. van Dijk,31,Liverpool", "Z. Debast,19,Anderlecht", "W. Orban,30,RB Leipzig", "A. Disasi,25,Monaco", "Z. Vyner,26,Bristol City", "Dante,39,Nice", "Gabriel Magalhaes,25,Arsenal", "G. Mancini,27,Roma", "António Silva,19,Benfica", "M. Akanji,27,Man City", "A. Rüdiger,30,Real Madrid", "W. Pacho,21,Antwerp", "M. Ginter,29,Freiburg", "E. Tapsoba,24,Bayer Leverkusen", "Ibañez,24,Roma", "Min-Jae Kim,26,Napoli", "R. Knoche,31,Union Berlin", "D. Upamecano,24,Bayern München", "Rúben Dias,26,Man City", "C. Smalling,33,Roma", "Gonçalo Inácio,21,Sporting CP", "Andrei Girotto,31,Nantes", "J. Castelletto,28,Nantes", "J. Cooper,28,Millwall", "B. Mechele,30,Club Brugge", "Marquinhos,29,PSG", "J. Gvardiol,21,RB Leipzig", "B. Cabango,23,Swansea City", "D. O'Shea,24,WBA", "F. Acerbi,35,Internazionale", "J. Storey,25,Preston North End", "I. Hien,24,Hellas Verona", "S. Coates,32,Sporting CP", "F. Schär,31,Newcastle United", "M. Talbi,25,Lorient", "J. Todibo,23,Nice", "J. Vertonghen,36,Anderlecht", "T. Lees,32,Huddersfield Town", "Bremer,26,Juventus", "T. Lockyer,28,Luton Town", "G. Hanley,31,Norwich City", "D. Lenihan,29,Middlesbrough", "E. Dier,29,Tottenham", "E. N'Dicka,23,Eintracht Frankfurt", "D. Lovren,33,Olympique Lyonnais", "P. Hincapié,21,Bayer Leverkusen", "S. Van der Heyden,25,Union Saint-Gilloise", "L. Dunk,31,Brighton", "F. Tomori,25,Milan", "R. Porteous,24,Watford", "Tuta,23,Eintracht Frankfurt", "C. Kipré,26,Cardiff City", "S. Botman,23,Newcastle United", "A. Theate,23,Rennes", "D. Hyam,27,Blackburn Rovers", "P. Ng,27,Cardiff City", "Matheus Reis,28,Sporting CP", "S. Beukema,24,AZ", "K. Danso,24,Lens", "J. Tarkowski,30,Everton", "Lisandro Martínez,25,Man United", "M. Kilman,26,Wolverhampton", "A. Yiadom,31,Reading", "J. Tah,27,Bayer Leverkusen", "I. Kandouss,25,Union Saint-Gilloise", "C. Mbemba,28,Olympique Marseille", "N. Milenković,25,Fiorentina", "D. Batth,32,Sunderland", "Pau Torres,26,Villarreal", "Sergio Ramos,37,PSG", "A. Ahmedhodzic,24,Sheffield United", "M. Guéhi,22,Crystal Palace", "L. O'Nien,28,Sunderland", "J. Dunne,25,Queens Park Rangers", "Iván Marcano,35,Porto", "S. Pavlović,22,Salzburg", "A. Jones,25,Hull City", "W. Faes,25,Leicester City", "João Basso,26,Arouca", "T. Ream,35,Fulham", "M. Martins,28,Austria Wien", "A. Romagnoli,28,Lazio", "T. Holmes,23,Reading", "C. Romero,25,Tottenham", "N. Wood,20,Swansea City", "N. Süle,27,Borussia Dortmund", "R. Rodríguez,30,Torino", "R. Le Normand,26,Real Sociedad", "J. Okumu,25,Gent", "N. Elvedi,26,Borussia M'gladbach", "M. McKenzie,24,Genk", "B. Wilmot,23,Stoke City", "Y. Ndayishimiye,24,Nice", "M. McGuinness,22,Cardiff City", "Y. Abdelhamid,35,Reims", "M. de Ligt,23,Bayern München", "Riccieli,24,Famalicão", "David García,29,Osasuna", "P. Kalulu,23,Milan", "M. Fox,29,Stoke City", "Thiago Silva,38,Chelsea", "W. Harding,26,Rotherham United", "Unai Núñez,26,Celta de Vigo", "F. Baschirotto,26,Lecce", "Pepe,40,Porto", "E. Konsa,25,Aston Villa", "J. Torunarigha,25,Gent", "A. Frías,25,León", "J. Aidoo,27,Celta de Vigo", "A. Bastoni,24,Internazionale", "R. Koch,26,Leeds United", "Jubal,29,Auxerre", "Vitor Tormena,27,Sporting Braga", "B. Mee,33,Brentford", "Danilo Pereira,31,PSG", "A. Rouault,22,Toulouse", "P. Lienhart,26,Freiburg", "R. Nicolaisen,26,Toulouse", "L. Lindsay,27,Preston North End", "M. Bokadi,27,Standard Liège", "M. Helik,27,Huddersfield Town", "T. Mings,30,Aston Villa", "Alejandro Catena,28,Rayo Vallecano", "L. Balerdi,24,Olympique Marseille", "J. Andersen,27,Crystal Palace", "T. McIntyre,24,Reading", "W. Hoedt,29,Watford", "J. Giménez,28,Atlético Madrid", "K. McFadzean,36,Coventry City", "Djené,31,Getafe", "Luis Hernández,34,Cádiz", "C. Humphreys,24,Rotherham United", "G. Pezzella,31,Real Betis", "C. Hountondji,29,Angers SCO", "G. Wüthrich,28,Sturm Graz", "J. Stones,29,Man City", "E. Ampadu,22,Spezia", "R. Raveloson,26,Auxerre", "M. Darmian,33,Internazionale", "A. Rrahmani,29,Napoli", "C. Lukeba,20,Olympique Lyonnais", "R. Varane,30,Man United", "S. Luperto,26,Empoli", "Diogo Leite,24,Union Berlin", "R. Dickie,27,Queens Park Rangers", "E. Mihaj,25,Famalicão", "L. Brassier,23,Brest", "M. Wieteska,26,Clermont", "H. Ito,24,Stuttgart", "J. Lucumí,24,Bologna", "T. Hübers,26,Köln", "M. van de Ven,22,Wolfsburg", "N. Schlotterbeck,23,Borussia Dortmund", "B. Popović,23,Cercle Brugge", "D. Alaba,30,Real Madrid", "C. Montes,26,Espanyol", "Rodrigo Ely,29,Almería", "P. Bochniewicz,27,Heerenveen", "Igor Zubeldía,26,Real Sociedad", "Filipe Relvas,23,Portimonense", "D. Doekhi,24,Union Berlin", "Rafael Tolói,32,Atalanta", "André Ramalho,31,PSV", "J. Whatmough,26,Wigan Athletic", "S. Bueno,24,Girona", "T. Watanabe,26,Kortrijk", "W. Saliba,22,Arsenal", "K. Koulibaly,31,Chelsea", "Steven Vitória,36,Chaves", "B. Davies,30,Tottenham", "S. Babić,27,Almería", "M. Wöber,25,Leeds United", "E. Palmer-Brown,26,Troyes", "Igor Junior,25,Fiorentina", "Aderllan Santos,34,Rio Ave", "J. Gradit,30,Lens", "J. Idzes,23,Go Ahead Eagles", "T. Mahrer,33,Austria Klagenfurt", "M. Yoshida,34,Schalke 04", "Rodrigo Guth,22,Fortuna Sittard", "J. Bijol,24,Udinese", "D. Nikolaou,24,Spezia", "M. Araujo,28,Emmen", "J. Daland,23,Cercle Brugge", "R. Pröpper,29,Twente", "A. Buongiorno,23,Torino", "C. Cuesta,24,Genk", "D. Affengruber,22,Sturm Graz", "L. Martínez Quarta,27,Fiorentina", "L. Cabrera,31,Espanyol", "D. Sanderson,23,Birmingham City", "Pedro Álvaro,23,Estoril", "Domingos Duarte,28,Getafe", "J. Gaari,29,RKC Waalwijk", "N. Pérez,22,Udinese", "R. El Yaakoubi,27,Excelsior", "K. Mavropanos,25,Stuttgart", "F. Luckeneder,29,LASK", "S. Adewoye,22,RKC Waalwijk", "C. Mepham,25,Bournemouth", "J. Gouweleeuw,31,Augsburg", "E. Pieters,34,WBA", "J. Beyer,22,Burnley", "N. Pallois,35,Nantes", "Iván Márquez,28,NEC", "Dani Vivian,23,Athletic Bilbao", "E. Pinnock,30,Brentford", "T. Plavotić,25,Ried", "J. Kiwior,23,Arsenal", "C. Bassey,23,Ajax", "P. McNair,28,Middlesbrough", "Anderson,28,Vizela", "K. Laifis,30,Standard Liège", "N. Aguerd,27,West Ham", "Antonio Raíllo,31,Mallorca", "Samir,28,Tigres UANL", "T. Harwood-Bellis,21,Burnley", "F. Almada,24,Mazatlán", "J. Park,28,Portimonense", "Pedrão,26,Portimonense", "Vasco Fernandes,36,Casa Pia AC", "N. Dussenne,31,Standard Liège", "V. Lindelöf,28,Man United", "D. Hadžikadunić,24,Mallorca", "Volnei,23,UD Oliveirense", "A. Djiku,28,Strasbourg", "Rúben Fernandes,37,Gil Vicente", "M. Valjent,27,Mallorca", "S. Niakaté,23,Sporting Braga", "N. Casale,25,Lazio", "I. Bamba,21,Vitória Guimarães", "Mikel Villanueva,30,Vitória Guimarães", "M. Kempf,28,Hertha BSC", "F. Medina,24,Lens", "F. Bacher,22,WSG Swarovski Tirol", "O. Solet,23,Salzburg", "A. Sandro,32,Juventus", "M. Veljković,27,Werder Bremen", "J. Hugonet,23,Austria Lustenau", "H. Carter,23,Blackburn Rovers", "André Amaro,20,Vitória Guimarães", "Nacho Fernández,33,Real Madrid", "H. Ekdal,24,Burnley", "A. Mandi,31,Villarreal", "M. Meulensteen,23,Vitesse", "A. Christensen,27,Barcelona", "M. te Wierik,30,Emmen", "D. Mirani,27,Volendam", "R. Balker,24,Groningen", "R. Flamingo,20,Vitesse", "Nélson Monte,27,Chaves", "O. Bevan,19,Yeovil Town", "S. Kolašinac,29,Olympique Marseille", "Edimilson Fernandes,27,Mainz 05", "Nuno Lima,22,Paços de Ferreira", "O. Kabak,23,Hoffenheim", "M. Salisu,24,Southampton", "B. Vriends,32,Sparta Rotterdam", "G. Maripán,29,Monaco", "P. Wiśniewski,24,Spezia", "J. Branthwaite,20,PSV", "Yeray Álvarez,28,Athletic Bilbao", "C. Lenglet,27,Tottenham", "M. Diakhaby,26,Valencia", "N. Isimat-Mirin,31,Vitesse", "José Fonte,39,Lille", "S. Savić,32,Atlético Madrid", "A. Omobamidele,20,Norwich City", "K. Boateng,26,Santa Clara", "M. Senesi,26,Bournemouth", "N. Zolotić,29,Casa Pia AC", "F. Lejeune,32,Rayo Vallecano", "I. Zabarnyi,20,Bournemouth", "R. Abascal,29,Boavista", "M. Friedl,25,Werder Bremen", "C. Jullien,30,Montpellier", "I. Ordets,30,Bochum", "D. Batubinsika,27,Maccabi Haifa", "Mario Hermoso,27,Atlético Madrid", "Bernardo Vital,22,Estoril", "M. Rodin,27,Oostende", "P. Jagielka,40,Stoke City", "P. Schuurs,23,Torino", "M. Sollbauer,33,Rapid Wien", "X. Mbuyamba,21,Volendam", "L. Peltier,36,Rotherham United", "A. Rogel,25,Hertha BSC", "Paulo Oliveira,31,Sporting Braga", "J. Worrall,26,Nottingham Forest", "R. Araújo,24,Barcelona", "A. Seidu,23,Clermont", "O. Gonzalez,25,Ajaccio", "R. Cannon,24,Boavista", "O. Colley,30,Beşiktaş", "Y. Salmier,30,Troyes", "G. Trauner,31,Feyenoord", "Zainadine Júnior,34,Marítimo", "Y. Valery,24,Angers SCO", "I. Konaté,24,Liverpool", "M. Jenz,24,Schalke 04", "S. Piesinger,31,Wolfsberger AC", "Pablo Marí,29,Monza", "B. Lambert,23,Eupen", "J. Amofa,24,Go Ahead Eagles", "M. Škriniar,28,Internazionale", "J. Rodon,25,Rennes", "N. Collins,22,Wolverhampton", "J. Robinson,29,Sheffield United", "Javi Sánchez,26,Real Valladolid", "J. Thorniley,26,Blackpool", "G. Osho,24,Luton Town", "M. Hummels,34,Borussia Dortmund", "K. Djidji,30,Torino", "M. van der Hoorn,30,Utrecht", "S. de Vrij,31,Internazionale", "C. Cathcart,34,Watford", "N. Araújo,31,América", "F. Ricca,28,OH Leuven", "A. Hanche-Olsen,26,Mainz 05", "S. Diomandé,22,Olympique Lyonnais", "A. Hughes,30,Preston North End", "K. Misao,27,Santa Clara", "G. Scalvini,19,Atalanta", "Rodrigo Becão,27,Udinese", "D. Fry,25,Middlesbrough", "S. Bell,31,Mainz 05", "R. Atkinson,24,Bristol City", "C. Dawson,33,Wolverhampton", "A. Tanghe,24,Oostende", "A. Obispo,24,PSV", "L. Mühl,26,Austria Wien", "T. Adarabioyo,25,Fulham", "B. Chardonnet,28,Brest", "A. Izzo,31,Monza", "O. Diomandé,18,Sporting CP", "C. Cresswell,20,Millwall", "H. Maguire,30,Man United", "D. Amartey,28,Leicester City", "E. Mašović,24,Bochum", "J. Bednarek,27,Southampton", "José Copete,23,Mallorca", "Sergi Gómez,31,Espanyol", "R. Neustädter,35,Westerlo", "Aridane Hernández,34,Osasuna", "M. Bianchetti,30,Cremonese", "Luiz Felipe,26,Real Betis", "A. Flint,33,Stoke City", "A. Ismajli,26,Empoli", "H. Darling,23,Swansea City", "A. Al-Dakhil,21,Burnley", "I. Diop,26,Fulham", "K. Zouma,28,West Ham", "E. Agbadou,25,Reims", "B. Badiashile,22,Chelsea", "Édgar González,26,Real Betis", "N. Edokpolor,26,Rheindorf Altach", "Bruno Wilson,26,Vizela", "Fernando Varela,35,Casa Pia AC", "C. Tilt,31,Wigan Athletic", "F. Daniliuc,22,Salernitana", "M. Hilgers,22,Twente", "K. Itakura,26,Borussia M'gladbach", "C. Nelson,30,Blackpool", "Fábio Cardoso,29,Porto", "Joaquín Fernández,26,Real Valladolid", "I. Doukouré,19,Strasbourg", "S. McLoughlin,26,Hull City", "L. Caldirola,32,Monza", "G. Ferrari,31,Sassuolo", "B. Amione,21,Sampdoria", "J. Opoku,24,Arouca", "M. Erlić,25,Sassuolo", "K. Naismith,31,Bristol City", "J. Panzo,22,Coventry City", "C. Taylor,29,Burnley", "L. Badé,23,Sevilla", "A. Ogbonna,35,West Ham", "M. Caufriez,26,Clermont", "E. Shabani,19,Mainz 05", "J. Vásquez,24,Cremonese", "A. Webster,28,Brighton", "T. Chalobah,23,Chelsea", "O. Alderete,26,Getafe", "M. Blažič,30,Angers SCO", "J. Kayembe,28,Charleroi", "B. Kouyaté,26,Montpellier", "A. Ferrari,28,Cremonese", "S. Gigot,29,Olympique Marseille", "Thiago Mendes,31,Olympique Lyonnais", "M. Ekpiteta,27,Blackpool", "K. Jakić,26,Eintracht Frankfurt", "Tomás Araújo,21,Gil Vicente", "T. Nianzou,20,Sevilla", "D. Bates,26,Mechelen", "B. van Duijl,17,Volendam", "A. Laporte,29,Man City", "W. Janssens,28,Sint-Truiden", "E. Aiwu,22,Cremonese", "O. Kossounou,22,Bayer Leverkusen", "Raúl Albiol,37,Villarreal", "L. McNally,23,Coventry City", "R. Pérez,33,San Lorenzo", "C. Coady,30,Everton", "M. Mbow,23,RFC Seraing", "D. Vos,21,Emmen", "F. Gatti,24,Juventus", "L. Querfeld,19,Rapid Wien", "D. Potts,29,Luton Town", "Léo Andrade,25,Khimki", "A. Pieper,25,Werder Bremen", "L. Lochoshvili,25,Cremonese", "R. Paeshuyse,21,Eupen", "C. Basham,34,Sheffield United", "J. Gomez,26,Liverpool", "B. Benamar,26,Volendam", "N. Sarr,29,Reading", "M. Sagnan,24,Utrecht", "T. Leistner,32,Sint-Truiden", "S. Hutchinson,32,Millwall", "N. Stark,28,Werder Bremen", "R. Wood,37,Rotherham United", "O. Urhoghide,22,Oostende", "S. Umtiti,29,Lecce", "J. Veldmate,34,Emmen", "Pedro Bigas,33,Elche", "S. Bornauw,24,Wolfsburg", "R. Pantalon,25,Rio Ave", "V. Sasso,32,Boavista", "Titi,35,Fortaleza", "A. Soumaoro,30,Bologna", "Patrick William,26,Rio Ave", "R. Tagir,20,Westerlo", "C. Avinel,36,Ajaccio", "Tiago Djaló,22,Lille", "K. Akpoguma,28,Hoffenheim", "N. Mehssatou,20,Kortrijk", "D. Baumgartner,26,Wolfsberger AC", "G. Pereira,23,Gil Vicente", "A. Auassar,36,Sparta Rotterdam", "S. McKenna,26,Nottingham Forest", "A. Bella-Kotchap,21,Southampton", "A. Sylla,20,Club Brugge", "M. Le Marchand,33,Strasbourg", "Adryelson,25,Botafogo", "K. Mac Allister,25,Argentinos Juniors", "Marcos Alonso,32,Barcelona", "Lucas Alves,30,Portimonense", "Lucas Galvão,31,Austria Wien", "H. Delcroix,24,Anderlecht", "H. Palacios,29,Elche", "N. Viergever,33,Utrecht", "Daniel Ayala,32,Blackburn Rovers", "S. Baidoo,19,Salzburg", "M. Bauer,23,Augsburg", "Nino,26,Fluminense", "H. Souttar,24,Leicester City", "V. Cuesta,34,Botafogo", "D. Ballard,23,Sunderland", "Lyanco,26,Southampton", "L. Bergsma,26,Cambuur", "C. Vidal,22,Ajaccio", "L. Pirola,21,Salernitana", "B. Nuytinck,33,Sampdoria", "Fabricio Bruno,27,Flamengo", "M. Tol,25,Cambuur", "E. Cömert,25,Valencia", "M. Haïdara,30,Lens", "B. Djimsiti,30,Atalanta", "Carlos Ponck,28,Chaves", "S. Wharton,25,Blackburn Rovers", "Bernardo,28,Salzburg", "Eric García,22,Barcelona", "A. Dari,24,Brest", "F. Sánchez,19,Gimnasia La Plata", "K. Vogt,31,Hoffenheim", "João Nunes,27,Casa Pia AC", "D. Lavalée,26,Mechelen", "J. El Yamiq,31,Real Valladolid", "G. Cunningham,32,Preston North End", "J. Jeanvier,31,Auxerre", "S. Mitrović,33,Getafe", "L. Villalba,28,Argentinos Juniors", "N. Figal,29,Boca Juniors", "Unai García,31,Osasuna", "M. Dekker,19,AZ", "Patric,30,Lazio", "José Marsà,21,Sporting Gijón", "M. Thiaw,21,Milan", "J. Chabot,25,Köln", "M. Hasebe,39,Eintracht Frankfurt", "N. Gyömbér,30,Salernitana", "F. Gattoni,24,San Lorenzo", "Z. Romero,23,Estudiantes", "D. Siovas,34,Fortuna Sittard", "C. Kabasele,32,Watford", "B. Gibson,30,Norwich City", "K. Pierie,22,Excelsior", "S. Kjær,34,Milan", "F. Tobio,33,Huracán", "K. Piątkowski,22,Gent", "S. Andreou,20,Charleroi", "R. Schifferl,23,Wolfsberger AC", "A. Filin,26,Eupen", "Ivanildo Fernandes,27,Vizela", "K. Günter,28,Sampdoria", "M. Rose,27,Coventry City", "E. Brítez,31,Fortaleza", "R. Bauer,28,Sint-Truiden", "D. Bronn,27,Salernitana", "F. Russo,28,Ludogorets", "L. Perrin,24,Strasbourg", "M. Roberts,32,Birmingham City", "D. Van den Buijs,27,RKC Waalwijk", "B. Meïté,21,Lorient", "Bruno Alves,32,Grêmio", "Jon Pacheco,22,Real Sociedad", "Robert Renan,19,Zenit", "G. Gómez,30,Palmeiras", "Tobias Figueiredo,29,Hull City", "P. Ceccaroni,27,Lecce", "L. Morales,32,Gimnasia La Plata", "A. Mbengue,21,Reading", "A. Borković,23,Sturm Graz", "W. Ditta,25,Newell's Old Boys", "T. Derijck,35,Zulte-Waregem", "M. Meisl,22,Austria Wien", "F. Smand,20,Cambuur", "M. Taloverov,22,LASK", "F. Garcés,23,Colón", "A. Luciatti,30,Tigre", "S. Ajayi,29,WBA", "G. Hernández,25,San Lorenzo", "J. Porozo,22,Troyes", "T. Cardona,27,Defensa y Justicia", "Bruno Melo,30,Goiás", "F. Ogier,34,Clermont", "J. Bruma,31,Heerenveen", "Alexsandro,23,Lille", "L. Sigali,36,Racing Club", "M. Lacroix,23,Wolfsburg", "K. Long,32,Birmingham City", "W. Fofana,22,Chelsea", "W. Troost-Ekong,29,Salernitana", "Marlon,27,Monza", "E. Roco,30,Elche", "M. Lackner,32,Ried", "F. Mallo,28,Rosario Central", "C. Özkacar,22,Valencia", "N. Galović,30,Arouca", "P. Hristov,24,Venezia", "M. Estève,21,Montpellier", "Jemerson,30,Atlético Mineiro", "A. Carboni,22,Venezia", "Maracás,29,Paços de Ferreira", "P. Dawidowicz,28,Hellas Verona", "Felipe,34,Nottingham Forest", "M. Mosquera,22,Marítimo", "M. Sonnleitner,36,Hartberg", "Gabriel Paulista,32,Valencia", "Fali,29,Cádiz", "L. Bonucci,36,Juventus", "Íñigo Martínez,32,Athletic Bilbao", "Diego Llorente,29,Roma", "C. Masterson,24,Gillingham", "Fernando Calero,27,Espanyol", "J. Bager,26,Charleroi", "Ruan,23,Sassuolo", "P. Perdichizzi,30,Westerlo", "I. Touré,20,Auxerre", "F. Uremović,26,Hertha BSC", "M. Demiral,25,Atalanta", "J. Brooks,30,Hoffenheim", "L. Lollo,36,Estudiantes", "Thiago Heleno,34,Athletico Paranaense", "F. Strauss,22,Rheindorf Altach", "G. Nyamsi,26,Strasbourg", "P. Sandler,26,NEC", "R. Meissen,21,Sparta Rotterdam", "David López,33,Girona", "A. King,34,Bristol City", "M. Pollock,21,Watford", "J. St. Juste,26,Sporting CP", "F. Alarcón,28,Instituto", "Simo Keddari,18,Espanyol", "S. Nieuwpoort,30,Excelsior", "L. Colwill,20,Chelsea", "Messias,28,Santos", "D. Opare,32,RFC Seraing", "F. Rasmussen,31,Godoy Cruz", "J. Hendry,28,Club Brugge", "A. Gravillon,25,Torino", "A. Sylla,22,RFC Seraing", "K. Wimmer,30,Rapid Wien", "J. Laporte,29,Lorient", "Julio Pleguezuelo,26,Twente", "P. Jaeckel,24,Union Berlin", "José Ángel Carmona,21,Elche", "Jorge Cuenca,23,Villarreal", "João Silva,24,Kortrijk", "J. Vanlerberghe,26,Mechelen", "L. Kilian,23,Köln", "A. Rami,37,Troyes", "T. Oermann,19,Wolfsberger AC", "J. Matip,31,Liverpool", "Morato,21,Benfica", "S. Nsoki,24,Hoffenheim", "Chumi,24,Almería", "K. Rekik,28,Sevilla", "G. Medel,35,Bologna", "Rezende,28,Bahia", "D. Oroz,22,Vitesse", "Gil,35,Corinthians", "Lucas Halter,23,Goiás", "M. Tounkara,21,Vitória Guimarães", "R. Burke,26,Luton Town", "J. Handl,25,Austria Wien", "G. Magnani,27,Hellas Verona", "F. Sierralta,26,Watford", "B. Bianchi,34,Atlético Tucumán", "W. Omari,23,Rennes", "K. Naughton,34,Swansea City", "C. Quintana,35,Rosario Central", "F. Uduokhai,25,Augsburg", "A. Callens,31,Girona", "L. Cooper,31,Leeds United", "Kike Salas,21,Tenerife", "G. Hall,31,Middlesbrough", "R. Kluivert,22,Utrecht", "P. Goltz,38,Colón", "M. Horvat,24,Hartberg", "J. Turi,21,Ried", "Borja López,29,Zulte-Waregem", "M. Eerdhuijzen,22,Sparta Rotterdam", "S. van Ottele,21,Heerenveen", "Juanpe,32,Girona", "D. Marcq,34,Charleroi", "Ygor Nogueira,28,Santa Clara", "D. Ćaleta-Car,26,Southampton", "M. Tshibuabua,21,RFC Seraing", "L. Willen,20,Zulte-Waregem", "Vitão,23,Internacional", "P. Barrios,32,Godoy Cruz", "Iago Maidana,27,América Mineiro", "I. Hautekiet,21,Standard Liège", "J. Novillo,25,Huracán", "N. Soldo,22,Köln", "A. Bamba,33,Angers SCO", "F. Calderón,25,Unión Santa Fe", "F. Ceccherini,31,Hellas Verona", "R. Holding,27,Arsenal", "David Carmo,23,Porto", "C. Corvalán,34,Unión Santa Fe", "C. Lema,33,Lanús", "R. Norrington-Davies,24,Sheffield United", "J. Stephens,29,Southampton", "C. Báez,33,Independiente", "Matheus Costa,28,Marítimo", "M. Tambedou,20,Zulte-Waregem", "João Victor,24,Nantes", "M. Wasinski,19,Kortrijk", "A. Mumin,24,Rayo Vallecano", "E. Cornelisse,20,Vitesse", "L. González Pírez,31,River Plate", "J. Kramer,26,NEC", "R. Sykes,24,Union Saint-Gilloise", "Bernardo Espinosa,33,Girona", "M. Caldara,29,Spezia", "N. Colombo,24,Defensa y Justicia", "C. Wooh,21,Rennes", "E. Olivera,33,Banfield", "D. Zagadou,24,Stuttgart", "A. Rébola,34,Belgrano", "M. Lemos,27,Atlético Mineiro", "T. Blokzijl,18,Groningen", "J. Simpson,26,Cardiff City", "M. Friedrich,27,Borussia M'gladbach", "W. Kannemann,32,Grêmio", "Zé Ivaldo,26,Athletico Paranaense", "Josué Sá,30,Rio Ave", "A. Hack,29,Mainz 05", "J. Guilavogui,32,Wolfsburg", "Marllon,31,Cuiabá", "S. van Beek,28,Heerenveen", "Lucas Oliveira,27,Cruzeiro", "A. Maciel,26,Banfield", "E. Ferigra,24,Paços de Ferreira", "T. Rotter,31,Hartberg", "B. Wright,30,Rotherham United", "J. Evans,35,Leicester City", "M. Zanka Jørgensen,33,Brentford", "M. Keane,30,Everton", "L. Bessile,24,Eupen", "Lucas Cunha,26,Red Bull Bragantino", "Léo Pereira,27,Flamengo", "S. Knežević,26,Charleroi", "M. Nastasić,30,Mallorca", "L. Klostermann,27,RB Leipzig", "Luan,30,Palmeiras", "Lucas Beraldo,19,São Paulo", "Ximo Navarro,33,Fortuna Sittard", "Juan Jesus,31,Napoli", "M. Niakhaté,27,Nottingham Forest", "Kanu,26,Bahia", "E. Aguilera,33,Tigre", "D. Sánchez,26,Tottenham", "S. Barreto,24,Independiente", "G. Mercado,36,Internacional", "M. Centurión,24,Arsenal", "Mexer,34,Estoril", "G. Nauber,31,Go Ahead Eagles", "J. Sørensen,25,Norwich City", "L. Balogun,34,Queens Park Rangers", "N. Meriano,22,Belgrano", "M. Torrén,34,Argentinos Juniors", "J. Kerr,26,Wigan Athletic", "B. Valdez,30,Boca Juniors", "S. Bradley,31,Luton Town", "F. Roncaglia,36,Boca Juniors", "E. Ebosse,24,Udinese", "J. Sosa,21,Bologna", "G. Sauro,33,Huracán", "Bruno Viana,28,Coritiba", "B. Diaby,25,Preston North End", "E. Insúa,34,Racing Club", "M. Brizuela,26,Vélez Sarsfield", "H. Dean,31,Birmingham City", "Luciano Castán,33,Cruzeiro", "G. González,28,Mallorca", "Ítalo,21,Santa Clara", "S. Seymor,21,Excelsior", "D. Wouters,26,Mechelen", "R. Edmonds-Green,24,Huddersfield Town", "D. Coppola,19,Hellas Verona", "Sidimar,30,Goiás", "C. Taylor,21,Stoke City", "S. Caulker,31,Wigan Athletic", "N. Romero,19,Atlético Tucumán", "J. Murillo,31,Sampdoria", "F. Fazio,36,Salernitana", "John Nwankwo,22,Elche", "Renê,31,Marítimo", "M. García,23,Sarmiento", "E. Godoy,29,Belgrano", "J. Pombo,22,Arsenal", "Y. Nakayama,26,Huddersfield Town", "L. Ranieri,24,Fiorentina", "Natan,22,Red Bull Bragantino", "D. Ouedraogo,24,OH Leuven", "R. Williams,22,Liverpool", "C. Verdonk,26,NEC", "David Luiz,36,Flamengo", "J. Canale,26,Lanús", "N. Capraro,25,Barracas Central", "M. Barać,28,Oostende", "Léo,27,Vasco da Gama", "G. Velázquez,32,Newell's Old Boys", "K. Fila,24,Zulte-Waregem", "M. Bola,25,Middlesbrough", "H. Marcelin,23,Cercle Brugge", "A. Diallo,27,RB Leipzig", "M. Sarr,24,Monaco", "B. Godeau,31,Gent", "J. Clarke-Salter,25,Queens Park Rangers", "B. Capon,35,Oostende", "A. Ouattara,22,Genk", "G. Piovi,28,Racing Club", "Ricardo Silva,30,América Mineiro", "F. Katelaris,26,Oostende", "D. Dessoleil,30,Kortrijk", "J. van Aken,28,Heerenveen", "J. Mccart,25,Leyton Orient", "M. Bech Sørensen,24,Groningen", "M. Pellegrino,20,Platense", "K. Bonifazi,27,Bologna", "S. Trémoulet,23,RFC Seraing", "A. Dijksteel,26,Middlesbrough", "M. Smets,19,Sint-Truiden", "D. D'Ambrosio,34,Internazionale", "Diego González,28,Elche", "M. Karamarko,25,Hartberg", "Bruno Uvini,32,Grêmio", "Nathan Silva,26,Atlético Mineiro", "V. Chiricheș,33,Cremonese", "S. Núñez,23,Estudiantes", "Jorge Meré,26,Cádiz", "C. Hérelle,30,Brest", "L. Østigård,23,Napoli", "S. Cook,32,Nottingham Forest", "P. Díaz,28,River Plate", "Gabriel Xavier,22,Bahia", "J. Flint,22,Volendam", "R. Arboleda,31,São Paulo", "J. Belocian,18,Rennes", "K. De Winter,20,Empoli", "P. Retsos,24,Olympiacos Piraeus", "David Duarte,28,Bahia", "Éder,28,América Mineiro", "Murillo,20,Corinthians", "Adriel,26,Austria Lustenau", "F. Mansilla,24,Newell's Old Boys", "E. Bailly,29,Olympique Marseille", "W. Boly,32,Nottingham Forest", "T. Blackett,29,Rotherham United", "L. Greiml,21,Schalke 04", "O. Camara,20,Angers SCO", "L. Yoro,17,Lille", "Víctor Chust,23,Cádiz", "W. Boyle,27,Huddersfield Town", "C. Okoli,21,Atalanta", "M. Dárdai,21,Hertha BSC", "I. Vázquez,25,Platense", "L. Magallán,29,Elche", "P. Kimpembe,27,PSG", "N. Murru,28,Sampdoria", "C. Söyüncü,27,Leicester City", "N. Aké,28,Man City", "J. Hato,17,Ajax", "Average,27,Club"
+];
+  const searchInput = document.getElementById("searchInput1");
+ const matchingNamesContainer = document.getElementById("matchingNames");
+const searchButton = document.getElementById("searchButton");
+
+
+function updateMatchingNames() {
+  const searchQuery = removeSpecialChars(searchInput.value.toLowerCase());
+  const matchingNames = names.filter(function(name) {
+    const normalizedName = removeSpecialChars(name.toLowerCase());
+    return normalizedName.includes(searchQuery);
+  });
+
+  matchingNamesContainer.innerHTML = "";
+
+  matchingNames.forEach(function(name) {
+    const [fullName, team, age] = name.split(",");
+
+    const nameElement = document.createElement("div");
+    nameElement.classList.add("name");
+
+    const fullNameElement = document.createElement("span");
+    fullNameElement.textContent = fullName;
+    fullNameElement.classList.add("fullName");
+    nameElement.appendChild(fullNameElement);
+
+    const ageElement = document.createElement("span");
+    ageElement.textContent = " (" + team + ",";
+    ageElement.classList.add("age");
+    nameElement.appendChild(ageElement);
+
+    const teamElement = document.createElement("span");
+    teamElement.textContent = " " + age + ")";
+    teamElement.classList.add("team");
+    nameElement.appendChild(teamElement);
+
+    nameElement.addEventListener("click", function() {
+      searchInput.value = fullName; // Set the clicked name as the search input value
+      searchButton1.click(); // Trigger the search button click event
+    });
+
+    matchingNamesContainer.appendChild(nameElement);
+  });
+
+  if (searchQuery === "" && matchingNames.length === 0) {
+    matchingNamesContainer.style.display = "none";
+  } else {
+    matchingNamesContainer.style.display = "block";
+
+    // Style the matching names container
+    matchingNamesContainer.style.backgroundColor = "#9c9b9b";
+    matchingNamesContainer.style.width = "384px";
+    matchingNamesContainer.style.padding = "10px";
+    matchingNamesContainer.style.position = "absolute";
+    matchingNamesContainer.style.top = "6%";
+    matchingNamesContainer.style.left = "12px";
+matchingNamesContainer.style.zIndex = "9999"; // Set a high z-index value
+  }
+
+  if (searchQuery === "") {
+    matchingNamesContainer.style.display = "none";
+  }
+}
+
+searchInput.addEventListener("input", updateMatchingNames);
+searchInput.addEventListener("keyup", function(event) {
+  if (event.key === "Enter") {
+    searchButton1.click(); // Trigger the search button click event
+  } else if (event.key === "Backspace") {
+    updateMatchingNames();
+  }
+});
+
+</script>
+
+  <script>
+    const csvData = `1,J. Timber,Ajax,21,0.986,0.957,0.895,0.320,0.764,0.248,0.964,5233
+2,Danilo,Juventus,31,0.773,0.776,0.800,0.304,0.206,0.555,0.644,5359
+3,N. Otamendi,Benfica,35,0.925,0.918,0.269,0.345,0.511,0.592,0.790,5266
+4,J. Egan,Sheffield United,30,0.382,0.166,0.592,0.513,0.650,0.521,0.333,5238
+5,D. Hancko,Feyenoord,25,0.928,0.573,0.943,0.402,0.984,0.669,0.957,5221
+6,N. Gudelj,Sevilla,31,0.630,0.844,0.098,0.193,0.369,0.577,0.806,5163
+7,A. Trusty,Arsenal,24,0.030,0.107,0.242,0.866,0.624,0.643,0.457,5119
+8,T. Alderweireld,Antwerp,34,0.943,0.350,0.928,0.211,0.988,0.527,0.583,5101
+9,C. Burgess,Union Saint-Gilloise,31,0.590,0.530,0.504,0.501,0.680,0.836,0.362,4967
+10,P. Chatzidiakos,AZ,26,0.862,0.627,0.899,0.123,0.456,0.177,0.806,4951
+11,Éder Militão,Real Madrid,25,0.788,0.783,0.350,0.684,0.285,0.814,0.729,4931
+12,V. van Dijk,Liverpool,31,0.952,0.951,0.415,0.118,0.922,0.981,0.427,4894
+13,Z. Debast,Anderlecht,19,0.784,0.416,0.971,0.082,0.438,0.012,0.918,4878
+14,W. Orban,RB Leipzig,30,0.964,0.806,0.805,0.568,0.853,0.460,0.534,4834
+15,A. Disasi,Monaco,25,0.619,0.638,0.838,0.437,0.790,0.852,0.963,4814
+16,Z. Vyner,Bristol City,26,0.534,0.207,0.858,0.639,0.638,0.063,0.493,4773
+17,Dante,Nice,39,0.955,0.910,0.893,0.466,0.577,0.875,0.238,4727
+18,Gabriel Magalhaes,Arsenal,25,0.817,0.922,0.483,0.087,0.454,0.550,0.641,4726
+19,G. Mancini,Roma,27,0.438,0.466,0.645,0.288,0.760,0.492,0.514,4699
+20,António Silva,Benfica,19,0.906,0.949,0.479,0.276,0.339,0.407,0.777,4693
+21,M. Akanji,Man City,27,0.992,0.971,0.625,0.036,0.138,0.119,0.890,4693
+22,A. Rüdiger,Real Madrid,30,0.850,0.948,0.065,0.012,0.656,0.848,0.614,4625
+23,W. Pacho,Antwerp,21,0.905,0.315,0.691,0.583,0.847,0.193,0.127,4603
+24,M. Ginter,Freiburg,29,0.710,0.503,0.796,0.267,0.448,0.795,0.618,4531
+25,E. Tapsoba,Bayer Leverkusen,24,0.907,0.691,0.906,0.647,0.793,0.481,0.888,4528
+26,Ibañez,Roma,24,0.517,0.745,0.168,0.723,0.501,0.744,0.534,4528
+27,Min-Jae Kim,Napoli,26,0.988,0.953,0.878,0.322,0.766,0.720,0.829,4460
+28,R. Knoche,Union Berlin,31,0.662,0.356,0.871,0.807,0.791,0.310,0.559,4445
+29,D. Upamecano,Bayern München,24,0.994,0.800,0.963,0.651,0.802,0.123,0.741,4432
+30,Rúben Dias,Man City,26,0.999,0.989,0.689,0.023,0.978,0.414,0.770,4432
+31,C. Smalling,Roma,33,0.286,0.432,0.024,0.320,0.993,0.983,0.055,4431
+32,Gonçalo Inácio,Sporting CP,21,0.981,0.879,0.951,0.229,0.305,0.440,0.975,4426
+33,Andrei Girotto,Nantes,31,0.536,0.311,0.450,0.988,0.181,0.537,0.309,4413
+34,J. Castelletto,Nantes,28,0.416,0.724,0.468,0.439,0.332,0.624,0.624,4406
+35,J. Cooper,Millwall,28,0.092,0.387,0.299,0.185,0.329,0.695,0.229,4405
+36,B. Mechele,Club Brugge,30,0.872,0.828,0.544,0.704,0.469,0.727,0.690,4362
+37,Marquinhos,PSG,29,0.957,0.995,0.063,0.060,0.865,0.433,0.703,4353
+38,J. Gvardiol,RB Leipzig,21,0.995,0.860,0.949,0.592,0.370,0.136,0.749,4352
+39,B. Cabango,Swansea City,23,0.975,0.919,0.618,0.263,0.702,0.259,0.948,4343
+40,D. O'Shea,WBA,24,0.776,0.561,0.783,0.203,0.561,0.730,0.848,4329
+41,F. Acerbi,Internazionale,35,0.741,0.729,0.274,0.247,0.501,0.704,0.790,4314
+42,J. Storey,Preston North End,25,0.181,0.364,0.180,0.592,0.476,0.901,0.575,4307
+43,I. Hien,Hellas Verona,24,0.171,0.257,0.286,0.960,0.595,0.373,0.411,4299
+44,S. Coates,Sporting CP,32,0.896,0.495,0.651,0.036,0.883,0.710,0.501,4298
+45,F. Schär,Newcastle United,31,0.410,0.131,0.772,0.308,0.869,0.821,0.795,4278
+46,M. Talbi,Lorient,25,0.627,0.840,0.077,0.343,0.649,0.835,0.690,4272
+47,J. Todibo,Nice,23,0.916,0.819,0.853,0.636,0.938,0.925,0.551,4268
+48,J. Vertonghen,Anderlecht,36,0.873,0.674,0.786,0.283,0.834,0.920,0.654,4264
+49,T. Lees,Huddersfield Town,32,0.209,0.308,0.668,0.322,0.814,0.704,0.037,4260
+50,Bremer,Juventus,26,0.713,0.754,0.070,0.575,0.808,0.434,0.127,4254
+51,T. Lockyer,Luton Town,28,0.129,0.069,0.911,0.777,0.955,0.568,0.355,4245
+52,G. Hanley,Norwich City,31,0.620,0.542,0.095,0.234,0.783,0.971,0.753,4244
+53,D. Lenihan,Middlesbrough,29,0.877,0.586,0.710,0.297,0.551,0.891,0.753,4214
+54,E. Dier,Tottenham,29,0.800,0.653,0.415,0.159,0.052,0.678,0.382,4211
+55,E. N'Dicka,Eintracht Frankfurt,23,0.764,0.696,0.475,0.487,0.141,0.384,0.514,4197
+56,D. Lovren,Olympique Lyonnais,33,0.879,0.661,0.470,0.123,0.444,0.843,0.669,4190
+57,P. Hincapié,Bayer Leverkusen,21,0.812,0.408,0.780,0.626,0.232,0.303,0.813,4185
+58,S. Van der Heyden,Union Saint-Gilloise,25,0.497,0.659,0.496,0.684,0.590,0.481,0.610,4150
+59,L. Dunk,Brighton,31,0.998,0.896,0.684,0.052,0.098,0.438,0.644,4132
+60,F. Tomori,Milan,25,0.744,0.628,0.534,0.803,0.662,0.817,0.703,4130
+61,R. Porteous,Watford,24,0.595,0.229,0.952,0.515,0.574,0.379,0.849,4118
+62,Tuta,Eintracht Frankfurt,23,0.692,0.121,0.931,0.900,0.538,0.098,0.548,4113
+63,C. Kipré,Cardiff City,26,0.116,0.255,0.200,0.327,0.858,0.587,0.483,4099
+64,S. Botman,Newcastle United,23,0.531,0.788,0.121,0.129,0.409,0.403,0.115,4093
+65,A. Theate,Rennes,23,0.937,0.912,0.916,0.060,0.373,0.519,0.860,4087
+66,D. Hyam,Blackburn Rovers,27,0.876,0.435,0.510,0.589,0.914,0.305,0.474,4068
+67,P. Ng,Cardiff City,27,0.317,0.279,0.831,0.513,0.691,0.052,0.551,4061
+68,Matheus Reis,Sporting CP,28,0.972,0.914,0.836,0.014,0.010,0.245,0.920,4050
+69,S. Beukema,AZ,24,0.967,0.753,0.930,0.166,0.737,0.484,0.905,4042
+70,K. Danso,Lens,24,0.888,0.862,0.444,0.099,0.211,0.755,0.895,4040
+71,J. Tarkowski,Everton,30,0.261,0.537,0.361,0.725,0.069,0.922,0.269,4040
+72,Lisandro Martínez,Man United,25,0.847,0.632,0.625,0.838,0.706,0.135,0.777,4027
+73,M. Kilman,Wolverhampton,26,0.698,0.468,0.794,0.451,0.546,0.421,0.644,4013
+74,A. Yiadom,Reading,31,0.055,0.214,0.235,0.474,0.086,0.203,0.773,4009
+75,J. Tah,Bayer Leverkusen,27,0.854,0.881,0.128,0.304,0.683,0.633,0.218,4000
+76,I. Kandouss,Union Saint-Gilloise,25,0.349,0.695,0.357,0.263,0.421,0.554,0.834,3990
+77,C. Mbemba,Olympique Marseille,28,0.579,0.439,0.703,0.291,0.690,0.625,0.900,3988
+78,N. Milenković,Fiorentina,25,0.720,0.679,0.528,0.469,0.164,0.935,0.411,3977
+79,D. Batth,Sunderland,32,0.385,0.317,0.059,0.103,0.514,0.662,0.105,3970
+80,Pau Torres,Villarreal,26,0.899,0.598,0.967,0.211,0.782,0.139,0.998,3943
+81,Sergio Ramos,PSG,37,0.996,0.994,0.364,0.140,0.055,0.828,0.644,3939
+82,A. Ahmedhodzic,Sheffield United,24,0.185,0.052,0.170,0.785,0.603,0.384,0.964,3930
+83,M. Guéhi,Crystal Palace,22,0.708,0.686,0.738,0.443,0.714,0.586,0.333,3921
+84,L. O'Nien,Sunderland,28,0.726,0.856,0.584,0.719,0.264,0.182,0.795,3918
+85,J. Dunne,Queens Park Rangers,25,0.392,0.084,0.439,0.294,0.953,0.750,0.437,3907
+86,Iván Marcano,Porto,35,0.813,0.905,0.546,0.004,0.051,0.648,0.411,3902
+87,S. Pavlović,Salzburg,22,0.632,0.235,0.955,0.969,0.578,0.969,0.914,3898
+88,A. Jones,Hull City,25,0.606,0.367,0.641,0.095,0.247,0.322,0.328,3892
+89,W. Faes,Leicester City,25,0.767,0.634,0.269,0.747,0.665,0.388,0.519,3888
+90,João Basso,Arouca,26,0.583,0.801,0.433,0.830,0.824,0.700,0.451,3882
+91,T. Ream,Fulham,35,0.762,0.766,0.701,0.352,0.695,0.386,0.697,3877
+92,M. Martins,Austria Wien,28,0.203,0.310,0.036,0.369,0.265,0.431,0.765,3871
+93,A. Romagnoli,Lazio,28,0.790,0.954,0.343,0.016,0.450,0.567,0.043,3868
+94,T. Holmes,Reading,23,0.153,0.157,0.555,0.387,0.466,0.423,0.088,3859
+95,C. Romero,Tottenham,25,0.772,0.849,0.575,0.774,0.400,0.492,0.592,3853
+96,N. Wood,Swansea City,20,0.946,0.964,0.151,0.017,0.124,0.291,0.959,3846
+97,N. Süle,Borussia Dortmund,27,0.966,0.931,0.831,0.053,0.744,0.770,0.940,3842
+98,R. Rodríguez,Torino,30,0.648,0.483,0.869,0.174,0.461,0.232,0.900,3835
+99,R. Le Normand,Real Sociedad,26,0.695,0.850,0.140,0.034,0.241,0.965,0.843,3821
+100,J. Okumu,Gent,25,0.842,0.285,0.993,0.752,0.561,0.860,0.777,3819
+101,N. Elvedi,Borussia M'gladbach,26,0.922,0.940,0.172,0.534,0.248,0.492,0.709,3819
+102,M. McKenzie,Genk,24,0.715,0.606,0.573,0.659,0.733,0.303,0.534,3814
+103,B. Wilmot,Stoke City,23,0.543,0.087,0.965,0.800,0.641,0.174,0.902,3811
+104,Y. Ndayishimiye,Nice,24,0.917,0.837,0.592,0.269,0.808,0.802,0.865,3809
+105,M. McGuinness,Cardiff City,22,0.321,0.490,0.035,0.647,0.263,0.973,0.402,3808
+106,Y. Abdelhamid,Reims,35,0.593,0.544,0.890,0.911,0.932,0.655,0.838,3807
+107,M. de Ligt,Bayern München,23,0.965,0.959,0.496,0.166,0.268,0.674,0.614,3801
+108,Riccieli,Famalicão,24,0.446,0.735,0.063,0.435,0.070,0.542,0.076,3798
+109,David García,Osasuna,29,0.422,0.621,0.630,0.451,0.280,0.777,0.534,3796
+110,P. Kalulu,Milan,23,0.791,0.881,0.796,0.600,0.434,0.043,0.866,3783
+111,M. Fox,Stoke City,29,0.601,0.345,0.998,0.663,0.975,0.548,0.703,3779
+112,Thiago Silva,Chelsea,38,0.958,0.965,0.708,0.451,0.152,0.883,0.288,3767
+113,W. Harding,Rotherham United,26,0.011,0.021,0.484,0.546,0.014,0.039,0.632,3762
+114,Unai Núñez,Celta de Vigo,26,0.742,0.709,0.694,0.310,0.908,0.370,0.690,3759
+115,F. Baschirotto,Lecce,26,0.087,0.057,0.548,0.381,0.561,0.282,0.201,3749
+116,Pepe,Porto,40,0.829,0.907,0.771,0.093,0.509,0.265,0.318,3747
+117,E. Konsa,Aston Villa,25,0.519,0.795,0.019,0.098,0.674,0.413,0.201,3744
+118,J. Torunarigha,Gent,25,0.779,0.698,0.621,0.543,0.185,0.977,0.897,3739
+119,A. Frías,León,25,0.486,0.485,0.590,0.565,0.865,0.829,0.801,3723
+120,J. Aidoo,Celta de Vigo,27,0.552,0.253,0.097,0.315,0.940,0.100,0.201,3722
+121,A. Bastoni,Internazionale,24,0.801,0.559,0.965,0.191,0.335,0.747,0.934,3722
+122,R. Koch,Leeds United,26,0.235,0.282,0.561,0.539,0.484,0.565,0.218,3715
+123,Jubal,Auxerre,29,0.172,0.172,0.107,0.508,0.023,0.771,0.201,3714
+124,Vitor Tormena,Sporting Braga,27,0.824,0.607,0.835,0.521,0.614,0.951,0.462,3705
+125,B. Mee,Brentford,33,0.279,0.147,0.415,0.203,0.526,0.136,0.299,3704
+126,Danilo Pereira,PSG,31,0.973,0.999,0.372,0.123,0.467,0.849,0.654,3702
+127,A. Rouault,Toulouse,22,0.667,0.888,0.423,0.821,0.883,0.214,0.283,3693
+128,P. Lienhart,Freiburg,26,0.848,0.610,0.569,0.105,0.399,0.520,0.820,3686
+129,R. Nicolaisen,Toulouse,26,0.663,0.701,0.484,0.707,0.632,0.866,0.519,3665
+130,L. Lindsay,Preston North End,27,0.158,0.077,0.357,0.895,0.674,0.913,0.201,3653
+131,M. Bokadi,Standard Liège,27,0.467,0.812,0.069,0.229,0.908,0.504,0.493,3637
+132,M. Helik,Huddersfield Town,27,0.081,0.157,0.193,0.831,0.612,0.753,0.269,3633
+133,T. Mings,Aston Villa,30,0.546,0.555,0.405,0.170,0.150,0.955,0.565,3633
+134,Alejandro Catena,Rayo Vallecano,28,0.545,0.318,0.870,0.151,0.457,0.805,0.258,3629
+135,L. Balerdi,Olympique Marseille,24,0.760,0.462,0.239,0.975,0.764,0.665,0.784,3620
+136,J. Andersen,Crystal Palace,27,0.754,0.193,0.977,0.404,0.241,0.872,0.551,3618
+137,T. McIntyre,Reading,24,0.152,0.095,0.212,0.300,0.110,0.714,0.770,3615
+138,W. Hoedt,Watford,29,0.853,0.402,0.981,0.517,0.458,0.796,0.288,3614
+139,J. Giménez,Atlético Madrid,28,0.575,0.759,0.317,0.575,0.626,0.551,0.229,3613
+140,K. McFadzean,Coventry City,36,0.182,0.160,0.433,0.698,0.630,0.555,0.052,3592
+141,Djené,Getafe,31,0.106,0.169,0.367,0.250,0.116,0.864,0.197,3586
+142,Luis Hernández,Cádiz,34,0.117,0.337,0.475,0.197,0.591,0.347,0.105,3583
+143,C. Humphreys,Rotherham United,24,0.014,0.133,0.239,0.607,0.825,0.355,0.362,3575
+144,G. Pezzella,Real Betis,31,0.378,0.504,0.119,0.234,0.417,0.791,0.105,3561
+145,C. Hountondji,Angers SCO,29,0.341,0.773,0.071,0.404,0.732,0.712,0.299,3559
+146,G. Wüthrich,Sturm Graz,28,0.090,0.248,0.378,0.754,0.975,0.865,0.637,3559
+147,J. Stones,Man City,29,0.960,0.988,0.206,0.002,0.162,0.966,0.875,3554
+148,E. Ampadu,Spezia,22,0.473,0.299,0.706,0.710,0.103,0.480,0.669,3554
+149,R. Raveloson,Auxerre,26,0.205,0.462,0.201,0.285,0.159,0.139,0.801,3549
+150,M. Darmian,Internazionale,33,0.612,0.676,0.501,0.328,0.158,0.080,0.669,3548
+151,A. Rrahmani,Napoli,29,0.984,0.936,0.783,0.160,0.097,0.352,0.713,3548
+152,C. Lukeba,Olympique Lyonnais,20,0.924,0.934,0.718,0.600,0.799,0.283,0.732,3546
+153,R. Varane,Man United,30,0.574,0.713,0.232,0.048,0.250,0.867,0.849,3543
+154,S. Luperto,Empoli,26,0.403,0.542,0.093,0.404,0.651,0.270,0.127,3539
+155,Diogo Leite,Union Berlin,24,0.544,0.170,0.790,0.788,0.403,0.773,0.697,3532
+156,R. Dickie,Queens Park Rangers,27,0.339,0.462,0.283,0.443,0.807,0.941,0.723,3528
+157,E. Mihaj,Famalicão,25,0.647,0.923,0.182,0.140,0.715,0.715,0.181,3522
+158,L. Brassier,Brest,23,0.335,0.280,0.896,0.315,0.516,0.125,0.299,3516
+159,M. Wieteska,Clermont,26,0.398,0.437,0.277,0.233,0.341,0.764,0.614,3498
+160,H. Ito,Stuttgart,24,0.930,0.344,0.983,0.563,0.078,0.333,0.559,3496
+161,J. Lucumí,Bologna,24,0.793,0.838,0.396,0.770,0.709,0.688,0.758,3494
+162,T. Hübers,Köln,26,0.789,0.329,0.660,0.589,0.115,0.563,0.267,3493
+163,M. van de Ven,Wolfsburg,22,0.577,0.655,0.333,0.117,0.292,0.499,0.887,3486
+164,N. Schlotterbeck,Borussia Dortmund,23,0.961,0.784,0.947,0.597,0.321,0.788,0.969,3466
+165,B. Popović,Cercle Brugge,23,0.000,0.022,0.234,0.517,0.743,0.159,0.027,3461
+166,D. Alaba,Real Madrid,30,0.738,0.831,0.077,0.018,0.648,0.021,0.720,3456
+167,C. Montes,Espanyol,26,0.309,0.182,0.501,0.191,0.104,0.571,0.534,3452
+168,Rodrigo Ely,Almería,29,0.218,0.247,0.269,0.352,0.526,0.832,0.144,3450
+169,P. Bochniewicz,Heerenveen,27,0.618,0.686,0.713,0.873,0.596,0.850,0.368,3449
+170,Igor Zubeldía,Real Sociedad,26,0.688,0.679,0.600,0.153,0.302,0.206,0.758,3445
+171,Filipe Relvas,Portimonense,23,0.589,0.551,0.864,0.600,0.829,0.948,0.333,3444
+172,D. Doekhi,Union Berlin,24,0.244,0.386,0.398,0.668,0.821,0.283,0.355,3440
+173,Rafael Tolói,Atalanta,32,0.628,0.419,0.850,0.852,0.420,0.676,0.501,3435
+174,André Ramalho,PSV,31,0.867,0.821,0.867,0.461,0.924,0.449,0.373,3432
+175,J. Whatmough,Wigan Athletic,26,0.457,0.269,0.762,0.291,0.958,0.844,0.055,3426
+176,S. Bueno,Girona,24,0.602,0.667,0.517,0.257,0.710,0.754,0.849,3419
+177,T. Watanabe,Kortrijk,26,0.285,0.086,0.343,0.911,0.860,0.808,0.246,3419
+178,W. Saliba,Arsenal,22,0.935,0.972,0.405,0.093,0.786,0.381,0.474,3416
+179,K. Koulibaly,Chelsea,31,0.852,0.808,0.821,0.600,0.397,0.551,0.474,3414
+180,Steven Vitória,Chaves,36,0.273,0.527,0.101,0.033,0.066,0.960,0.088,3411
+181,B. Davies,Tottenham,30,0.440,0.490,0.419,0.066,0.039,0.302,0.881,3408
+182,S. Babić,Almería,27,0.291,0.811,0.135,0.166,0.528,0.569,0.527,3408
+183,M. Wöber,Leeds United,25,0.322,0.092,0.893,0.552,0.706,0.443,0.548,3402
+184,E. Palmer-Brown,Troyes,26,0.256,0.644,0.221,0.826,0.449,0.277,0.269,3400
+185,Igor Junior,Fiorentina,25,0.828,0.855,0.350,0.571,0.548,0.527,0.937,3396
+186,Aderllan Santos,Rio Ave,34,0.709,0.668,0.217,0.561,0.157,0.607,0.168,3394
+187,J. Gradit,Lens,30,0.908,0.960,0.942,0.258,0.598,0.104,0.977,3384
+188,J. Idzes,Go Ahead Eagles,23,0.461,0.486,0.326,0.609,0.704,0.054,0.218,3383
+189,T. Mahrer,Austria Klagenfurt,33,0.399,0.752,0.129,0.842,0.696,0.198,0.076,3379
+190,M. Yoshida,Schalke 04,34,0.509,0.474,0.645,0.557,0.199,0.812,0.151,3376
+191,Rodrigo Guth,Fortuna Sittard,22,0.327,0.140,0.129,0.807,0.540,0.437,0.592,3366
+192,J. Bijol,Udinese,24,0.458,0.590,0.316,0.721,0.864,0.858,0.151,3362
+193,D. Nikolaou,Spezia,24,0.437,0.563,0.603,0.335,0.511,0.086,0.468,3353
+194,M. Araujo,Emmen,28,0.565,0.309,0.674,0.813,0.996,0.628,0.583,3346
+195,J. Daland,Cercle Brugge,23,0.016,0.051,0.501,0.663,0.926,0.780,0.344,3345
+196,R. Pröpper,Twente,29,0.826,0.498,0.715,0.180,0.170,0.427,0.688,3343
+197,A. Buongiorno,Torino,23,0.540,0.548,0.111,0.979,0.374,0.601,0.276,3332
+198,C. Cuesta,Genk,24,0.655,0.895,0.255,0.217,0.680,0.194,0.878,3312
+199,D. Affengruber,Sturm Graz,22,0.146,0.223,0.580,0.478,0.434,0.731,0.055,3302
+200,L. Martínez Quarta,Fiorentina,27,0.838,0.476,0.959,0.881,0.341,0.369,0.790,3299
+201,L. Cabrera,Espanyol,31,0.201,0.041,0.793,0.508,0.376,0.514,0.127,3292
+202,D. Sanderson,Birmingham City,23,0.041,0.094,0.106,0.234,0.413,0.261,0.309,3265
+203,Pedro Álvaro,Estoril,23,0.551,0.597,0.510,0.029,0.004,0.256,0.575,3233
+204,Domingos Duarte,Getafe,28,0.037,0.183,0.211,0.104,0.001,0.782,0.097,3233
+205,J. Gaari,RKC Waalwijk,29,0.490,0.569,0.525,0.853,0.207,0.373,0.849,3232
+206,N. Pérez,Udinese,22,0.673,0.807,0.633,0.807,0.148,0.139,0.678,3231
+207,R. El Yaakoubi,Excelsior,27,0.298,0.123,0.879,0.914,0.642,0.270,0.843,3228
+208,K. Mavropanos,Stuttgart,25,0.750,0.663,0.794,0.539,0.380,0.923,0.861,3228
+209,F. Luckeneder,LASK,29,0.521,0.428,0.703,0.539,0.872,0.772,0.534,3215
+210,S. Adewoye,RKC Waalwijk,22,0.264,0.666,0.071,0.807,0.332,0.204,0.597,3214
+211,C. Mepham,Bournemouth,25,0.300,0.393,0.157,0.831,0.323,0.645,0.043,3208
+212,J. Gouweleeuw,Augsburg,31,0.234,0.028,0.865,0.659,0.123,0.298,0.258,3207
+213,E. Pieters,WBA,34,0.571,0.496,0.527,0.180,0.967,0.279,0.795,3206
+214,J. Beyer,Burnley,22,0.989,0.871,0.135,0.140,0.684,0.510,1.000,3203
+215,N. Pallois,Nantes,35,0.433,0.544,0.657,0.770,0.312,0.291,0.246,3196
+216,Iván Márquez,NEC,28,0.538,0.649,0.507,0.261,0.250,0.702,0.151,3193
+217,Dani Vivian,Athletic Bilbao,23,0.572,0.287,0.783,0.583,0.426,0.036,0.749,3191
+218,E. Pinnock,Brentford,30,0.115,0.230,0.031,0.682,0.943,0.893,0.043,3189
+219,T. Plavotić,Ried,25,0.405,0.347,0.882,0.508,0.587,0.799,0.548,3187
+220,J. Kiwior,Arsenal,23,0.470,0.452,0.083,0.662,0.176,0.280,0.437,3186
+221,C. Bassey,Ajax,23,0.953,0.701,0.842,0.583,0.936,0.525,0.723,3184
+222,P. McNair,Middlesbrough,28,0.701,0.374,0.821,0.077,0.144,0.468,0.849,3176
+223,Anderson,Vizela,28,0.062,0.127,0.029,0.242,0.750,0.227,0.214,3175
+224,K. Laifis,Standard Liège,30,0.492,0.725,0.550,0.363,0.250,0.492,0.813,3168
+225,N. Aguerd,West Ham,27,0.268,0.275,0.250,0.349,0.579,0.388,0.229,3163
+226,Antonio Raíllo,Mallorca,31,0.139,0.492,0.010,0.647,0.852,0.788,0.457,3163
+227,Samir,Tigres UANL,28,0.555,0.817,0.217,0.524,0.405,0.741,0.813,3162
+228,T. Harwood-Bellis,Burnley,21,0.987,0.498,0.996,0.339,0.835,0.464,0.918,3149
+229,F. Almada,Mazatlán,24,0.361,0.474,0.725,0.609,0.887,0.270,0.344,3146
+230,J. Park,Portimonense,28,0.774,0.778,0.972,0.425,0.651,0.484,0.709,3133
+231,Pedrão,Portimonense,26,0.596,0.524,0.903,0.571,0.407,0.986,0.592,3127
+232,Vasco Fernandes,Casa Pia AC,36,0.472,0.587,0.265,0.244,0.221,0.680,0.355,3119
+233,N. Dussenne,Standard Liège,31,0.568,0.505,0.925,0.871,0.891,0.756,0.474,3115
+234,V. Lindelöf,Man United,28,0.887,0.942,0.040,0.207,0.725,0.840,0.723,3113
+235,D. Hadžikadunić,Mallorca,24,0.532,0.618,0.229,0.446,0.572,0.463,0.373,3112
+236,Volnei,UD Oliveirense,23,0.671,0.396,0.586,0.531,0.318,0.139,0.559,3108
+237,A. Djiku,Strasbourg,28,0.451,0.508,0.858,0.932,0.548,0.801,0.192,3100
+238,Rúben Fernandes,Gil Vicente,37,0.660,0.538,0.490,0.113,0.047,0.320,0.088,3085
+239,M. Valjent,Mallorca,27,0.151,0.528,0.387,0.357,0.119,0.504,0.402,3084
+240,S. Niakaté,Sporting Braga,23,0.756,0.732,0.776,0.592,0.539,0.756,0.246,3081
+241,N. Casale,Lazio,25,0.818,0.963,0.092,0.160,0.320,0.239,0.427,3075
+242,I. Bamba,Vitória Guimarães,21,0.188,0.201,0.043,0.919,0.304,0.076,0.115,3069
+243,Mikel Villanueva,Vitória Guimarães,30,0.404,0.866,0.756,0.461,0.877,0.262,0.368,3068
+244,M. Kempf,Hertha BSC,28,0.224,0.281,0.423,0.651,0.672,0.503,0.071,3050
+245,F. Medina,Lens,24,0.993,0.983,0.954,0.138,0.175,0.023,0.977,3049
+246,F. Bacher,WSG Swarovski Tirol,22,0.598,0.346,0.984,0.955,0.768,0.393,0.527,3041
+247,O. Solet,Salzburg,23,0.830,0.777,0.828,0.984,0.995,0.366,0.902,3040
+248,A. Sandro,Juventus,32,0.820,0.814,0.858,0.461,0.140,0.539,0.935,3034
+249,M. Veljković,Werder Bremen,27,0.680,0.370,0.911,0.534,0.443,0.291,0.218,3029
+250,J. Hugonet,Austria Lustenau,23,0.445,0.075,0.813,0.800,0.171,0.750,0.071,3028
+251,H. Carter,Blackburn Rovers,23,0.603,0.352,0.405,0.622,0.467,0.308,0.736,3026
+252,André Amaro,Vitória Guimarães,20,0.370,0.801,0.232,0.856,0.561,0.457,0.770,3024
+253,Nacho Fernández,Real Madrid,33,0.814,0.986,0.101,0.335,0.062,0.671,0.697,3022
+254,H. Ekdal,Burnley,24,0.891,0.867,0.550,0.425,0.828,0.470,0.971,3014
+255,A. Mandi,Villarreal,31,0.869,0.976,0.433,0.023,0.031,0.017,0.669,3011
+256,M. Meulensteen,Vitesse,23,0.631,0.682,0.648,0.466,0.445,0.046,0.703,3010
+257,A. Christensen,Barcelona,27,0.977,0.992,0.327,0.071,0.703,0.894,0.924,3010
+258,M. te Wierik,Emmen,30,0.297,0.361,0.147,0.674,0.258,0.215,0.451,3009
+259,D. Mirani,Volendam,27,0.287,0.385,0.327,0.861,0.417,0.175,0.368,3002
+260,R. Balker,Groningen,24,0.637,0.614,0.528,0.534,0.432,0.127,0.890,2997
+261,R. Flamingo,Vitesse,20,0.343,0.252,0.731,0.795,0.452,0.349,0.382,2995
+262,Nélson Monte,Chaves,27,0.351,0.441,0.596,0.701,0.246,0.201,0.575,2993
+263,O. Bevan,Yeovil Town,19,0.100,0.004,0.524,0.847,0.622,0.762,0.795,2990
+264,S. Kolašinac,Olympique Marseille,29,0.642,0.706,0.053,0.363,0.316,0.176,0.938,2987
+265,Edimilson Fernandes,Mainz 05,27,0.169,0.078,0.708,0.725,0.220,0.130,0.218,2986
+266,Nuno Lima,Paços de Ferreira,22,0.480,0.657,0.698,0.274,0.165,0.255,0.000,2980
+267,O. Kabak,Hoffenheim,23,0.409,0.193,0.235,0.689,0.204,0.508,0.654,2976
+268,M. Salisu,Southampton,24,0.475,0.304,0.905,0.902,0.429,0.600,0.115,2974
+269,B. Vriends,Sparta Rotterdam,32,0.621,0.745,0.542,0.410,0.758,0.607,0.483,2966
+270,G. Maripán,Monaco,29,0.548,0.682,0.197,0.838,0.729,0.265,0.299,2962
+271,P. Wiśniewski,Spezia,24,0.559,0.803,0.484,0.964,0.327,0.742,0.583,2961
+272,J. Branthwaite,PSV,20,0.755,0.890,0.634,0.294,0.772,0.826,0.583,2954
+273,Yeray Álvarez,Athletic Bilbao,28,0.561,0.394,0.856,0.415,0.516,0.157,0.948,2953
+274,C. Lenglet,Tottenham,27,0.821,0.630,0.686,0.428,0.739,0.212,0.861,2952
+275,M. Diakhaby,Valencia,26,0.311,0.589,0.076,0.300,0.821,0.252,0.468,2952
+276,N. Isimat-Mirin,Vitesse,31,0.626,0.472,0.080,0.276,0.567,0.630,0.624,2942
+277,José Fonte,Lille,39,0.911,0.930,0.396,0.013,0.088,0.610,0.510,2938
+278,S. Savić,Atlético Madrid,32,0.616,0.902,0.310,0.378,0.475,0.684,0.569,2932
+279,A. Omobamidele,Norwich City,20,0.831,0.633,0.460,0.387,0.689,0.405,0.777,2926
+280,K. Boateng,Santa Clara,26,0.258,0.590,0.147,0.505,0.744,0.634,0.033,2926
+281,M. Senesi,Bournemouth,26,0.397,0.397,0.651,0.979,0.516,0.367,0.276,2926
+282,N. Zolotić,Casa Pia AC,29,0.703,0.625,0.790,0.778,0.490,0.040,0.741,2910
+283,F. Lejeune,Rayo Vallecano,32,0.381,0.246,0.754,0.201,0.855,0.938,0.181,2908
+284,I. Zabarnyi,Bournemouth,20,0.982,0.789,0.941,0.723,0.631,0.131,0.987,2908
+285,R. Abascal,Boavista,29,0.585,0.479,0.911,0.437,0.656,0.591,0.127,2906
+286,M. Friedl,Werder Bremen,25,0.730,0.358,0.853,0.937,0.226,0.242,0.309,2901
+287,C. Jullien,Montpellier,30,0.124,0.662,0.025,0.543,0.439,0.884,0.055,2901
+288,I. Ordets,Bochum,30,0.097,0.138,0.116,0.858,0.275,0.452,0.011,2900
+289,D. Batubinsika,Maccabi Haifa,27,0.729,0.853,0.194,0.304,0.873,0.934,0.784,2894
+290,Mario Hermoso,Atlético Madrid,27,0.825,0.854,0.698,0.315,0.134,0.593,0.597,2894
+291,Bernardo Vital,Estoril,22,0.649,0.533,0.105,0.082,0.021,0.464,0.427,2889
+292,M. Rodin,Oostende,27,0.082,0.014,0.419,0.861,0.462,0.724,0.201,2877
+293,P. Jagielka,Stoke City,40,0.799,0.448,0.361,0.240,0.961,0.318,0.037,2877
+294,P. Schuurs,Torino,23,0.487,0.520,0.040,0.963,0.165,0.402,0.618,2877
+295,M. Sollbauer,Rapid Wien,33,0.379,0.643,0.168,0.328,0.528,0.215,0.127,2871
+296,X. Mbuyamba,Volendam,21,0.179,0.174,0.648,0.885,0.458,0.323,0.382,2863
+297,L. Peltier,Rotherham United,36,0.033,0.012,0.514,0.622,0.469,0.537,0.097,2862
+298,A. Rogel,Hertha BSC,25,0.068,0.053,0.275,0.550,0.153,0.604,0.333,2857
+299,Paulo Oliveira,Sporting Braga,31,0.718,0.204,0.807,0.747,0.312,0.834,0.105,2855
+300,J. Worrall,Nottingham Forest,26,0.206,0.286,0.361,0.508,0.581,0.543,0.238,2854
+301,R. Araújo,Barcelona,24,0.743,0.721,0.400,0.021,0.341,0.368,0.908,2852
+302,A. Seidu,Clermont,23,0.427,0.733,0.084,0.515,0.194,0.978,0.829,2845
+303,O. Gonzalez,Ajaccio,25,0.204,0.288,0.007,0.639,0.850,0.450,0.238,2843
+304,R. Cannon,Boavista,24,0.388,0.333,0.054,0.677,0.228,0.005,0.168,2841
+305,O. Colley,Beşiktaş,30,0.402,0.292,0.170,0.285,0.245,0.350,0.037,2838
+306,Y. Salmier,Troyes,30,0.496,0.420,0.621,0.754,0.130,0.676,0.644,2824
+307,G. Trauner,Feyenoord,31,0.926,0.926,0.937,0.725,0.951,0.657,0.758,2818
+308,Zainadine Júnior,Marítimo,34,0.429,0.577,0.140,0.086,0.283,0.397,0.238,2818
+309,Y. Valery,Angers SCO,24,0.160,0.113,0.609,0.526,0.280,0.191,0.986,2816
+310,I. Konaté,Liverpool,24,0.809,0.805,0.464,0.363,0.089,0.976,0.569,2805
+311,M. Jenz,Schalke 04,24,0.913,0.891,0.636,0.657,0.837,0.667,0.989,2804
+312,S. Piesinger,Wolfsberger AC,31,0.513,0.168,0.900,0.802,0.568,0.723,0.197,2804
+313,Pablo Marí,Monza,29,0.748,0.761,0.368,0.583,0.706,0.918,0.144,2803
+314,B. Lambert,Eupen,23,0.380,0.101,0.460,0.994,0.379,0.101,0.632,2801
+315,J. Amofa,Go Ahead Eagles,24,0.499,0.706,0.747,0.636,0.378,0.210,0.935,2798
+316,M. Škriniar,Internazionale,28,0.932,0.920,0.405,0.109,0.005,0.128,0.820,2786
+317,J. Rodon,Rennes,25,0.808,0.794,0.162,0.136,0.718,0.467,0.559,2785
+318,N. Collins,Wolverhampton,22,0.785,0.891,0.405,0.356,0.667,0.478,0.490,2784
+319,J. Robinson,Sheffield United,29,0.282,0.233,0.756,0.620,0.978,0.388,0.678,2782
+320,Javi Sánchez,Real Valladolid,26,0.334,0.367,0.387,0.759,0.534,0.160,0.713,2779
+321,J. Thorniley,Blackpool,26,0.103,0.128,0.357,0.575,0.684,0.779,0.218,2778
+322,G. Osho,Luton Town,24,0.054,0.103,0.474,0.415,0.616,0.581,0.753,2775
+323,M. Hummels,Borussia Dortmund,34,0.940,0.568,0.766,0.936,0.794,0.975,0.809,2772
+324,K. Djidji,Torino,30,0.690,0.815,0.162,0.392,0.364,0.287,0.328,2771
+325,M. van der Hoorn,Utrecht,30,0.665,0.673,0.975,0.300,0.865,0.811,0.663,2757
+326,S. de Vrij,Internazionale,31,0.641,0.434,0.054,0.543,0.969,0.797,0.437,2750
+327,C. Cathcart,Watford,34,0.679,0.457,0.967,0.351,0.943,0.818,0.474,2748
+328,N. Araújo,América,31,0.375,0.551,0.379,0.140,0.840,0.409,0.947,2746
+329,F. Ricca,OH Leuven,28,0.840,0.852,0.592,0.694,0.490,0.387,0.411,2735
+330,A. Hanche-Olsen,Mainz 05,26,0.400,0.145,0.689,0.363,0.210,0.940,0.624,2733
+331,S. Diomandé,Olympique Lyonnais,22,0.860,0.825,0.873,0.767,0.380,0.894,0.736,2725
+332,A. Hughes,Preston North End,30,0.305,0.171,0.750,0.449,0.688,0.824,0.910,2717
+333,K. Misao,Santa Clara,27,0.347,0.489,0.423,0.903,0.311,0.861,0.229,2710
+334,G. Scalvini,Atalanta,19,0.731,0.598,0.731,0.925,0.141,0.511,0.519,2710
+335,Rodrigo Becão,Udinese,27,0.293,0.608,0.405,0.626,0.887,0.929,0.501,2709
+336,D. Fry,Middlesbrough,25,0.696,0.283,0.609,0.269,0.897,0.900,0.229,2692
+337,S. Bell,Mainz 05,31,0.288,0.223,0.768,0.776,0.129,0.571,0.081,2691
+338,R. Atkinson,Bristol City,24,0.277,0.264,0.520,0.609,0.917,0.928,0.912,2688
+339,C. Dawson,Wolverhampton,33,0.556,0.579,0.538,0.290,0.366,0.090,0.174,2687
+340,A. Tanghe,Oostende,24,0.072,0.117,0.572,0.905,0.347,0.209,0.066,2684
+341,A. Obispo,PSV,24,0.890,0.795,0.932,0.607,0.584,0.765,0.575,2681
+342,L. Mühl,Austria Wien,26,0.644,0.405,0.923,0.677,0.305,0.682,0.420,2680
+343,T. Adarabioyo,Fulham,25,0.721,0.493,0.802,0.410,0.736,0.718,0.773,2678
+344,B. Chardonnet,Brest,28,0.391,0.516,0.665,0.803,0.856,0.634,0.333,2677
+345,A. Izzo,Monza,31,0.737,0.762,0.455,0.893,0.498,0.224,0.683,2676
+346,O. Diomandé,Sporting CP,18,0.903,0.789,0.838,0.392,0.542,0.840,0.743,2671
+347,C. Cresswell,Millwall,20,0.215,0.125,0.735,0.615,0.644,0.399,0.510,2665
+348,H. Maguire,Man United,30,0.902,0.703,0.773,0.042,0.647,0.662,0.905,2661
+349,D. Amartey,Leicester City,28,0.849,0.993,0.099,0.060,0.168,0.195,0.618,2660
+350,E. Mašović,Bochum,24,0.099,0.179,0.036,0.752,0.838,0.018,0.081,2657
+351,J. Bednarek,Southampton,27,0.554,0.764,0.364,0.813,0.495,0.703,0.534,2653
+352,José Copete,Mallorca,23,0.066,0.206,0.350,0.945,0.353,0.361,0.473,2652
+353,Sergi Gómez,Espanyol,31,0.290,0.616,0.110,0.090,0.542,0.444,0.027,2646
+354,R. Neustädter,Westerlo,35,0.474,0.596,0.111,0.877,0.767,0.110,0.027,2642
+355,Aridane Hernández,Osasuna,34,0.312,0.467,0.086,0.466,0.350,0.630,0.151,2636
+356,M. Bianchetti,Cremonese,30,0.107,0.271,0.446,0.677,0.607,0.708,0.088,2627
+357,Luiz Felipe,Real Betis,26,0.452,0.717,0.210,0.743,0.180,0.112,0.115,2627
+358,A. Flint,Stoke City,33,0.315,0.154,0.849,0.176,0.580,0.932,0.006,2626
+359,A. Ismajli,Empoli,26,0.323,0.609,0.066,0.597,0.754,0.394,0.344,2624
+360,H. Darling,Swansea City,23,0.970,0.911,0.247,0.042,0.030,0.029,0.999,2622
+361,A. Al-Dakhil,Burnley,21,0.834,0.748,0.815,0.659,0.398,0.240,0.805,2621
+362,I. Diop,Fulham,26,0.841,0.676,0.642,0.256,0.380,0.805,0.834,2605
+363,K. Zouma,West Ham,28,0.125,0.409,0.005,0.066,0.606,0.917,0.181,2600
+364,E. Agbadou,Reims,25,0.692,0.669,0.657,0.759,0.548,0.721,0.569,2598
+365,B. Badiashile,Chelsea,22,0.861,0.917,0.762,0.469,0.169,0.967,0.551,2585
+366,Édgar González,Real Betis,26,0.478,0.916,0.049,0.263,0.235,0.555,0.269,2580
+367,N. Edokpolor,Rheindorf Altach,26,0.463,0.200,0.946,0.908,0.439,0.461,0.618,2573
+368,Bruno Wilson,Vizela,26,0.130,0.298,0.561,0.439,0.621,0.256,0.309,2570
+369,Fernando Varela,Casa Pia AC,35,0.308,0.577,0.281,0.187,0.427,0.048,0.559,2569
+370,C. Tilt,Wigan Athletic,31,0.084,0.107,0.176,0.478,0.844,0.694,0.299,2548
+371,F. Daniliuc,Salernitana,22,0.456,0.847,0.116,0.943,0.133,0.311,0.420,2547
+372,M. Hilgers,Twente,22,0.719,0.226,0.299,0.526,0.414,0.104,0.953,2544
+373,K. Itakura,Borussia M'gladbach,26,0.934,0.961,0.528,0.455,0.455,0.240,0.784,2542
+374,C. Nelson,Blackpool,30,0.093,0.076,0.310,0.531,0.723,0.340,0.299,2541
+375,Fábio Cardoso,Porto,29,0.895,0.947,0.250,0.031,0.327,0.539,0.373,2541
+376,Joaquín Fernández,Real Valladolid,26,0.267,0.574,0.432,0.146,0.380,0.574,0.246,2539
+377,I. Doukouré,Strasbourg,19,0.223,0.239,0.441,0.345,0.273,0.388,0.784,2538
+378,S. McLoughlin,Hull City,26,0.797,0.291,0.621,0.503,0.960,0.649,0.362,2535
+379,L. Caldirola,Monza,32,0.661,0.834,0.293,0.250,0.011,0.250,0.362,2535
+380,G. Ferrari,Sassuolo,31,0.484,0.750,0.379,0.111,0.054,0.435,0.565,2529
+381,B. Amione,Sampdoria,21,0.299,0.645,0.183,0.864,0.172,0.634,0.299,2526
+382,J. Opoku,Arouca,24,0.131,0.473,0.090,0.217,0.696,0.227,0.462,2524
+383,M. Erlić,Sassuolo,25,0.516,0.583,0.305,0.812,0.174,0.274,0.192,2520
+384,K. Naismith,Bristol City,31,0.578,0.024,0.940,0.677,0.195,0.910,0.790,2518
+385,J. Panzo,Coventry City,22,0.350,0.639,0.427,0.813,0.521,0.479,0.836,2517
+386,C. Taylor,Burnley,29,0.959,0.755,0.811,0.118,0.674,0.690,0.873,2515
+387,L. Badé,Sevilla,23,0.524,0.566,0.043,0.457,0.717,0.683,0.218,2510
+388,A. Ogbonna,West Ham,35,0.314,0.593,0.022,0.172,0.094,0.335,0.000,2509
+389,M. Caufriez,Clermont,26,0.449,0.937,0.374,0.410,0.889,0.117,0.928,2500
+390,E. Shabani,Mainz 05,19,0.414,0.072,0.766,0.157,0.007,0.220,0.871,2493
+391,J. Vásquez,Cremonese,24,0.163,0.271,0.227,0.970,0.075,0.083,0.427,2491
+392,A. Webster,Brighton,28,0.969,0.875,0.919,0.198,0.305,0.988,0.809,2487
+393,T. Chalobah,Chelsea,23,0.803,0.865,0.419,0.492,0.270,0.361,0.637,2485
+394,O. Alderete,Getafe,26,0.027,0.005,0.925,0.521,0.425,0.776,0.663,2483
+395,M. Blažič,Angers SCO,30,0.615,0.669,0.391,0.133,0.078,0.791,0.168,2474
+396,J. Kayembe,Charleroi,28,0.485,0.192,0.987,0.706,0.362,0.314,0.992,2463
+397,B. Kouyaté,Montpellier,26,0.396,0.378,0.334,0.932,0.182,0.565,0.402,2463
+398,A. Ferrari,Cremonese,28,0.337,0.349,0.317,0.952,0.776,0.612,0.411,2458
+399,S. Gigot,Olympique Marseille,29,0.666,0.631,0.049,0.876,0.875,0.912,0.928,2455
+400,Thiago Mendes,Olympique Lyonnais,31,0.948,0.726,0.807,0.744,0.846,0.232,0.318,2447
+401,M. Ekpiteta,Blackpool,27,0.031,0.135,0.353,0.546,0.380,0.953,0.373,2445
+402,K. Jakić,Eintracht Frankfurt,26,0.609,0.256,0.663,0.759,0.065,0.084,0.624,2442
+403,Tomás Araújo,Gil Vicente,21,0.766,0.624,0.749,0.410,0.596,0.546,0.836,2440
+404,T. Nianzou,Sevilla,20,0.560,0.903,0.111,0.156,0.943,0.733,0.468,2432
+405,D. Bates,Mechelen,26,0.434,0.306,0.194,0.938,0.908,0.156,0.382,2423
+406,B. van Duijl,Volendam,17,0.469,0.036,0.813,0.831,0.817,0.066,0.914,2418
+407,A. Laporte,Man City,29,1.000,0.998,0.799,0.001,0.598,0.578,0.995,2418
+408,W. Janssens,Sint-Truiden,28,0.346,0.215,0.701,0.976,0.469,0.790,0.832,2415
+409,E. Aiwu,Cremonese,22,0.275,0.569,0.293,0.756,0.312,0.411,0.765,2415
+410,O. Kossounou,Bayer Leverkusen,22,0.745,0.540,0.846,0.557,0.034,0.612,0.813,2413
+411,Raúl Albiol,Villarreal,37,0.835,0.824,0.678,0.122,0.380,0.544,0.732,2411
+412,L. McNally,Coventry City,23,0.119,0.138,0.340,0.965,0.907,0.902,0.843,2389
+413,R. Pérez,San Lorenzo,33,0.057,0.264,0.049,0.074,0.217,0.364,0.288,2386
+414,C. Coady,Everton,30,0.502,0.391,0.489,0.008,0.138,0.124,0.105,2382
+415,M. Mbow,RFC Seraing,23,0.195,0.362,0.034,0.803,0.366,0.654,0.288,2380
+416,D. Vos,Emmen,21,0.783,0.780,0.627,0.381,0.130,0.112,0.641,2372
+417,F. Gatti,Juventus,24,0.586,0.704,0.376,0.123,0.127,0.426,0.669,2368
+418,L. Querfeld,Rapid Wien,19,0.245,0.089,0.600,0.780,0.585,0.359,0.201,2365
+419,D. Potts,Luton Town,29,0.040,0.129,0.557,0.428,0.515,0.696,0.151,2358
+420,Léo Andrade,Khimki,25,0.180,0.300,0.620,0.663,0.583,0.215,0.390,2353
+421,A. Pieper,Werder Bremen,25,0.638,0.439,0.837,0.864,0.374,0.717,0.765,2348
+422,L. Lochoshvili,Cremonese,25,0.192,0.355,0.400,0.682,0.309,0.317,0.765,2346
+423,R. Paeshuyse,Eupen,21,0.369,0.409,0.121,0.860,0.957,0.192,0.181,2343
+424,C. Basham,Sheffield United,34,0.333,0.177,0.642,0.900,0.691,0.704,0.920,2343
+425,J. Gomez,Liverpool,26,0.949,0.613,0.900,0.372,0.055,0.509,0.603,2340
+426,B. Benamar,Volendam,26,0.233,0.118,0.427,0.697,0.783,0.452,0.192,2335
+427,N. Sarr,Reading,29,0.111,0.338,0.242,0.831,0.508,0.199,0.437,2335
+428,M. Sagnan,Utrecht,24,0.498,0.557,0.374,0.609,0.919,0.051,0.158,2335
+429,T. Leistner,Sint-Truiden,32,0.421,0.163,0.334,0.419,0.899,0.829,0.246,2318
+430,S. Hutchinson,Millwall,32,0.127,0.148,0.691,0.878,0.854,0.583,0.033,2318
+431,N. Stark,Werder Bremen,28,0.625,0.460,0.738,0.954,0.428,0.041,0.510,2312
+432,R. Wood,Rotherham United,37,0.001,0.001,0.133,0.589,0.627,0.403,0.007,2298
+433,O. Urhoghide,Oostende,22,0.074,0.203,0.261,0.999,0.396,0.732,0.411,2294
+434,S. Umtiti,Lecce,29,0.122,0.626,0.093,0.853,0.777,0.431,0.309,2291
+435,J. Veldmate,Emmen,34,0.725,0.598,0.831,0.252,0.294,0.878,0.618,2289
+436,Pedro Bigas,Elche,33,0.362,0.532,0.850,0.710,0.840,0.575,0.663,2289
+437,S. Bornauw,Wolfsburg,24,0.714,0.739,0.694,0.223,0.027,0.738,0.344,2283
+438,R. Pantalon,Rio Ave,25,0.420,0.648,0.221,0.392,0.006,0.396,0.445,2269
+439,V. Sasso,Boavista,32,0.476,0.872,0.021,0.084,0.341,0.867,0.158,2262
+440,Titi,Fortaleza,35,0.294,0.583,0.569,0.065,0.608,0.263,0.641,2262
+441,A. Soumaoro,Bologna,30,0.677,0.979,0.023,0.146,0.561,0.650,0.697,2260
+442,Patrick William,Rio Ave,26,0.674,0.738,0.847,0.764,0.043,0.634,0.941,2259
+443,R. Tagir,Westerlo,20,0.723,0.826,0.427,0.897,0.795,0.166,0.624,2254
+444,C. Avinel,Ajaccio,36,0.168,0.456,0.048,0.053,0.895,0.954,0.055,2246
+445,Tiago Djaló,Lille,22,0.945,0.996,0.187,0.088,0.041,0.094,0.820,2242
+446,K. Akpoguma,Hoffenheim,28,0.320,0.296,0.627,0.940,0.250,0.737,0.654,2238
+447,N. Mehssatou,Kortrijk,20,0.194,0.186,0.756,0.526,0.221,0.000,0.683,2230
+448,D. Baumgartner,Wolfsberger AC,26,0.191,0.027,0.688,0.989,0.759,0.783,0.402,2229
+449,G. Pereira,Gil Vicente,23,0.727,0.373,0.889,0.380,0.930,0.749,0.683,2226
+450,A. Auassar,Sparta Rotterdam,36,0.604,0.612,0.774,0.766,0.351,0.131,0.583,2223
+451,S. McKenna,Nottingham Forest,26,0.230,0.312,0.338,0.246,0.642,0.885,0.158,2220
+452,A. Bella-Kotchap,Southampton,21,0.328,0.164,0.299,0.928,0.989,0.877,0.501,2216
+453,A. Sylla,Club Brugge,20,0.864,0.771,0.618,0.478,0.770,0.162,0.743,2213
+454,M. Le Marchand,Strasbourg,33,0.510,0.531,0.844,0.632,0.337,0.876,0.501,2208
+455,Adryelson,Botafogo,25,0.634,0.844,0.338,0.223,0.162,0.958,0.115,2207
+456,K. Mac Allister,Argentinos Juniors,25,0.597,0.382,0.982,0.987,0.292,0.346,0.663,2206
+457,Marcos Alonso,Barcelona,32,0.971,0.975,0.811,0.247,0.240,0.735,0.869,2202
+458,Lucas Alves,Portimonense,30,0.645,0.742,0.135,0.039,0.362,0.896,0.055,2199
+459,Lucas Galvão,Austria Wien,31,0.639,0.634,0.979,0.770,0.713,0.400,0.801,2199
+460,H. Delcroix,Anderlecht,24,0.815,0.831,0.677,0.897,0.678,0.596,0.743,2198
+461,H. Palacios,Elche,29,0.036,0.384,0.172,0.419,0.357,0.023,0.565,2197
+462,N. Viergever,Utrecht,33,0.464,0.417,0.762,0.203,0.144,0.164,0.875,2197
+463,Daniel Ayala,Blackburn Rovers,32,0.608,0.431,0.082,0.639,0.616,0.774,0.033,2195
+464,S. Baidoo,Salzburg,19,0.526,0.220,0.848,0.945,0.586,0.803,0.777,2195
+465,M. Bauer,Augsburg,23,0.053,0.070,0.492,0.828,0.534,0.536,0.246,2189
+466,Nino,Fluminense,26,0.883,0.966,0.310,0.010,0.521,0.766,0.897,2188
+467,H. Souttar,Leicester City,24,0.259,0.105,0.613,0.425,0.830,0.982,0.168,2184
+468,V. Cuesta,Botafogo,34,0.539,0.682,0.817,0.207,0.177,0.414,0.462,2183
+469,D. Ballard,Sunderland,23,0.489,0.719,0.405,0.446,0.349,0.673,0.669,2178
+470,Lyanco,Southampton,26,0.310,0.119,0.345,0.719,0.083,0.320,0.462,2175
+471,L. Bergsma,Cambuur,26,0.683,0.376,0.575,0.710,0.777,0.311,0.820,2174
+472,C. Vidal,Ajaccio,22,0.135,0.620,0.557,0.310,0.008,0.197,0.333,2173
+473,L. Pirola,Salernitana,21,0.367,0.380,0.283,0.780,0.288,0.578,0.368,2168
+474,B. Nuytinck,Sampdoria,33,0.246,0.275,0.062,0.995,0.819,0.068,0.127,2161
+475,Fabricio Bruno,Flamengo,27,0.786,0.830,0.935,0.077,0.555,0.756,0.838,2161
+476,M. Tol,Cambuur,25,0.530,0.449,0.265,0.824,0.785,0.107,0.603,2155
+477,E. Cömert,Valencia,25,0.462,0.726,0.189,0.691,0.568,0.299,0.551,2149
+478,M. Haïdara,Lens,30,0.542,0.736,0.292,0.258,0.049,0.713,0.603,2144
+479,B. Djimsiti,Atalanta,30,0.700,0.560,0.212,0.982,0.994,0.450,0.333,2141
+480,Carlos Ponck,Chaves,28,0.468,0.843,0.197,0.478,0.542,0.222,0.127,2140
+481,S. Wharton,Blackburn Rovers,25,0.672,0.209,0.516,0.485,0.496,0.856,0.493,2139
+482,Bernardo,Salzburg,28,0.359,0.042,0.548,0.910,0.869,0.871,0.519,2136
+483,Eric García,Barcelona,22,0.990,0.954,0.932,0.299,0.154,0.268,0.979,2132
+484,A. Dari,Brest,24,0.419,0.326,0.504,0.261,0.556,0.672,0.127,2131
+485,F. Sánchez,Gimnasia La Plata,19,0.025,0.392,0.458,0.457,0.981,0.252,0.021,2127
+486,K. Vogt,Hoffenheim,31,0.846,0.548,0.990,0.668,0.341,0.010,0.583,2126
+487,João Nunes,Casa Pia AC,27,0.386,0.195,0.567,0.684,0.200,0.627,0.373,2120
+488,D. Lavalée,Mechelen,26,0.353,0.071,0.876,0.990,0.668,0.498,0.820,2119
+489,J. El Yamiq,Real Valladolid,31,0.448,0.569,0.438,0.738,0.337,0.534,0.493,2119
+490,G. Cunningham,Preston North End,32,0.216,0.151,0.807,0.223,0.334,0.263,0.309,2117
+491,J. Jeanvier,Auxerre,31,0.338,0.505,0.187,0.788,0.404,0.171,0.362,2098
+492,S. Mitrović,Getafe,33,0.046,0.113,0.012,0.047,0.112,0.473,0.000,2097
+493,L. Villalba,Argentinos Juniors,28,0.871,0.536,1.000,0.615,0.815,0.335,0.895,2095
+494,N. Figal,Boca Juniors,29,0.504,0.400,0.446,0.632,0.235,0.129,0.861,2091
+495,Unai García,Osasuna,31,0.170,0.555,0.235,0.105,0.250,0.456,0.457,2087
+496,M. Dekker,AZ,19,0.910,0.768,0.694,0.029,0.972,0.502,0.969,2083
+497,Patric,Lazio,30,0.918,0.782,0.310,0.174,0.903,0.004,0.023,2082
+498,José Marsà,Sporting Gijón,21,0.777,0.366,0.265,0.076,0.024,0.095,0.890,2081
+499,M. Thiaw,Milan,21,0.859,0.905,0.644,0.907,0.964,0.517,0.457,2079
+500,J. Chabot,Köln,25,0.669,0.148,0.427,0.673,0.445,0.926,0.174,2078
+501,M. Hasebe,Eintracht Frankfurt,39,0.884,0.198,0.879,0.639,0.275,0.077,0.427,2076
+502,N. Gyömbér,Salernitana,30,0.200,0.427,0.109,0.739,0.720,0.583,0.214,2073
+503,F. Gattoni,San Lorenzo,24,0.281,0.669,0.028,0.163,0.885,0.290,0.318,2072
+504,Z. Romero,Estudiantes,23,0.417,0.403,0.887,0.625,0.795,0.327,0.776,2063
+505,D. Siovas,Fortuna Sittard,34,0.265,0.099,0.433,0.870,0.560,0.896,0.427,2060
+506,C. Kabasele,Watford,32,0.435,0.324,0.515,0.750,0.779,0.870,0.569,2059
+507,B. Gibson,Norwich City,30,0.759,0.433,0.743,0.372,0.501,0.873,0.427,2059
+508,K. Pierie,Excelsior,22,0.978,0.526,0.999,0.953,0.916,0.158,0.943,2058
+509,S. Kjær,Milan,34,0.780,0.593,0.614,0.385,0.632,0.070,0.283,2056
+510,F. Tobio,Huracán,33,0.121,0.387,0.603,0.157,0.992,0.533,0.214,2048
+511,K. Piątkowski,Gent,22,0.717,0.113,0.455,0.878,0.660,0.684,0.888,2046
+512,S. Andreou,Charleroi,20,0.368,0.236,0.179,0.885,0.411,0.200,0.181,2045
+513,R. Schifferl,Wolfsberger AC,23,0.080,0.006,0.721,0.990,0.107,0.559,0.483,2043
+514,A. Filin,Eupen,26,0.505,0.508,0.907,0.848,0.801,0.035,0.451,2041
+515,Ivanildo Fernandes,Vizela,27,0.232,0.651,0.212,0.182,0.037,0.619,0.037,2041
+516,K. Günter,Sampdoria,28,0.257,0.445,0.391,0.928,0.486,0.745,0.514,2039
+517,M. Rose,Coventry City,27,0.303,0.268,0.882,0.574,0.871,0.414,0.490,2037
+518,E. Brítez,Fortaleza,31,0.174,0.315,0.209,0.215,0.324,0.659,0.603,2034
+519,R. Bauer,Sint-Truiden,28,0.187,0.043,0.521,0.555,0.537,0.314,0.575,2033
+520,D. Bronn,Salernitana,27,0.528,0.765,0.665,0.324,0.045,0.653,0.258,2028
+521,F. Russo,Ludogorets,28,0.807,0.580,0.660,0.234,0.774,0.992,0.713,2023
+522,L. Perrin,Strasbourg,24,0.263,0.719,0.446,0.651,0.186,0.847,0.690,2016
+523,M. Roberts,Birmingham City,32,0.010,0.000,0.439,0.733,0.212,0.879,0.023,2015
+524,D. Van den Buijs,RKC Waalwijk,27,0.393,0.332,0.888,0.973,0.372,0.049,0.288,2014
+525,B. Meïté,Lorient,21,0.806,0.969,0.246,0.725,0.244,0.188,0.534,2006
+526,Bruno Alves,Grêmio,32,0.144,0.502,0.016,0.112,0.197,0.858,0.071,1999
+527,Jon Pacheco,Real Sociedad,22,0.900,0.841,0.398,0.229,0.954,0.805,0.957,1994
+528,Robert Renan,Zenit,19,0.689,0.551,0.715,0.187,0.750,0.030,0.813,1986
+529,G. Gómez,Palmeiras,30,0.493,0.678,0.496,0.267,0.331,0.230,0.445,1986
+530,Tobias Figueiredo,Hull City,29,0.712,0.546,0.561,0.492,0.878,0.602,0.565,1985
+531,P. Ceccaroni,Lecce,27,0.865,0.694,0.875,0.404,0.045,0.139,0.981,1983
+532,L. Morales,Gimnasia La Plata,32,0.069,0.277,0.718,0.631,0.673,0.353,0.527,1983
+533,A. Mbengue,Reading,21,0.052,0.095,0.150,0.703,0.018,0.504,0.501,1980
+534,A. Borković,Sturm Graz,23,0.227,0.455,0.521,0.764,0.966,0.589,0.333,1974
+535,W. Ditta,Newell's Old Boys,25,0.878,0.767,0.598,0.404,0.902,0.095,0.972,1973
+536,T. Derijck,Zulte-Waregem,35,0.255,0.602,0.177,0.609,0.422,0.726,0.411,1970
+537,M. Meisl,Austria Wien,22,0.450,0.478,0.776,0.461,0.983,0.033,0.534,1970
+538,F. Smand,Cambuur,20,0.686,0.779,0.121,0.820,0.368,0.092,0.468,1969
+539,M. Taloverov,LASK,22,0.522,0.772,0.100,0.935,0.771,0.189,0.174,1968
+540,F. Garcés,Colón,23,0.083,0.054,0.340,0.888,0.204,0.069,0.229,1964
+541,A. Luciatti,Tigre,30,0.270,0.639,0.317,0.831,0.986,0.914,0.624,1962
+542,S. Ajayi,WBA,29,0.569,0.457,0.255,0.045,0.644,0.821,0.784,1956
+543,G. Hernández,San Lorenzo,25,0.296,0.642,0.729,0.604,0.726,0.328,0.841,1955
+544,J. Porozo,Troyes,22,0.088,0.333,0.013,0.838,0.924,0.378,0.267,1953
+545,T. Cardona,Defensa y Justicia,27,0.363,0.062,0.817,0.534,0.932,0.647,0.843,1943
+546,Bruno Melo,Goiás,30,0.633,0.925,0.550,0.021,0.847,0.037,0.158,1936
+547,F. Ogier,Clermont,34,0.444,0.409,0.736,0.269,0.291,0.220,0.197,1932
+548,J. Bruma,Heerenveen,31,0.580,0.741,0.682,0.140,0.119,0.612,0.514,1928
+549,Alexsandro,Lille,23,0.951,0.934,0.770,0.402,0.609,0.250,0.483,1926
+550,L. Sigali,Racing Club,36,0.836,0.718,0.989,0.767,0.432,0.522,0.884,1925
+551,M. Lacroix,Wolfsburg,23,0.819,0.797,0.876,0.869,0.298,0.632,0.637,1918
+552,K. Long,Birmingham City,32,0.022,0.011,0.263,0.882,0.987,0.889,0.023,1917
+553,W. Fofana,Chelsea,22,0.794,0.737,0.460,0.725,0.602,0.522,0.983,1914
+554,W. Troost-Ekong,Salernitana,29,0.407,0.404,0.455,0.074,0.380,0.644,0.390,1908
+555,Marlon,Monza,27,0.796,0.990,0.156,0.396,0.439,0.473,0.583,1907
+556,E. Roco,Elche,30,0.165,0.861,0.261,0.372,0.055,0.937,0.269,1907
+557,M. Lackner,Ried,32,0.600,0.407,0.630,0.663,0.074,0.186,0.197,1903
+558,F. Mallo,Rosario Central,28,0.064,0.429,0.450,0.370,0.959,0.604,0.355,1902
+559,C. Özkacar,Valencia,22,0.584,0.859,0.648,0.639,0.998,0.497,0.875,1895
+560,N. Galović,Arouca,30,0.428,0.829,0.042,0.045,0.696,0.338,0.076,1892
+561,P. Hristov,Venezia,24,0.454,0.449,0.298,0.645,0.478,0.527,0.882,1892
+562,M. Estève,Montpellier,21,0.240,0.188,0.250,0.858,0.469,0.603,0.318,1890
+563,Jemerson,Atlético Mineiro,30,0.805,0.877,0.299,0.071,0.528,0.275,0.990,1889
+564,A. Carboni,Venezia,22,0.501,0.103,0.838,0.884,0.434,0.064,0.743,1881
+565,Maracás,Paços de Ferreira,29,0.364,0.913,0.001,0.215,0.662,0.527,0.076,1880
+566,P. Dawidowicz,Hellas Verona,28,0.228,0.156,0.227,0.866,0.209,0.625,0.527,1880
+567,Felipe,Nottingham Forest,34,0.140,0.259,0.074,0.986,0.684,0.590,0.318,1877
+568,M. Mosquera,Marítimo,22,0.271,0.226,0.263,0.691,0.906,0.947,0.402,1874
+569,M. Sonnleitner,Hartberg,36,0.175,0.142,0.470,0.198,0.092,0.165,0.043,1873
+570,Gabriel Paulista,Valencia,32,0.394,0.760,0.382,0.450,0.029,0.514,0.729,1871
+571,Fali,Cádiz,29,0.024,0.074,0.144,0.121,0.637,0.008,0.402,1869
+572,L. Bonucci,Juventus,36,0.733,0.685,0.922,0.023,0.326,0.361,0.027,1867
+573,Íñigo Martínez,Athletic Bilbao,32,0.622,0.452,0.752,0.171,0.701,0.058,0.866,1865
+574,Diego Llorente,Roma,29,0.643,0.486,0.287,0.689,0.862,0.820,0.318,1859
+575,C. Masterson,Gillingham,24,0.021,0.031,0.587,0.339,0.899,0.469,0.534,1858
+576,Fernando Calero,Espanyol,27,0.207,0.380,0.305,0.799,0.302,0.218,0.402,1856
+577,J. Bager,Charleroi,26,0.411,0.353,0.636,0.828,0.528,0.484,0.732,1848
+578,Ruan,Sassuolo,23,0.507,0.848,0.006,0.668,0.463,0.441,0.115,1847
+579,P. Perdichizzi,Westerlo,30,0.610,0.697,0.655,0.715,0.723,0.414,0.328,1846
+580,I. Touré,Auxerre,20,0.466,0.864,0.101,0.620,0.356,0.993,0.713,1845
+581,F. Uremović,Hertha BSC,26,0.039,0.037,0.008,0.741,0.317,0.511,0.115,1844
+582,M. Demiral,Atalanta,25,0.154,0.350,0.000,0.911,0.973,0.919,0.081,1838
+583,J. Brooks,Hoffenheim,30,0.525,0.422,0.327,0.592,0.092,0.881,0.052,1833
+584,L. Lollo,Estudiantes,36,0.276,0.548,0.727,0.240,0.297,0.527,0.081,1823
+585,Thiago Heleno,Athletico Paranaense,34,0.566,0.379,0.614,0.217,0.592,0.719,0.008,1812
+586,F. Strauss,Rheindorf Altach,22,0.023,0.066,0.133,0.780,0.755,0.414,0.420,1811
+587,G. Nyamsi,Strasbourg,26,0.455,0.335,0.443,0.575,0.233,0.445,0.720,1811
+588,P. Sandler,NEC,26,0.765,0.901,0.678,0.684,0.808,0.800,0.610,1807
+589,R. Meissen,Sparta Rotterdam,21,0.758,0.320,0.948,0.796,0.806,0.204,0.373,1806
+590,David López,Girona,33,0.855,0.884,0.452,0.193,0.789,0.223,0.678,1801
+591,A. King,Bristol City,34,0.352,0.095,0.201,0.546,0.505,0.074,0.127,1796
+592,M. Pollock,Watford,21,0.105,0.040,0.672,0.341,0.930,0.678,0.258,1794
+593,J. St. Juste,Sporting CP,26,0.979,0.987,0.882,0.109,0.380,0.457,0.948,1793
+594,F. Alarcón,Instituto,28,0.098,0.483,0.882,0.842,1.000,0.634,0.483,1793
+595,Simo Keddari,Espanyol,18,0.856,0.984,0.452,0.318,0.571,0.784,0.678,1793
+596,S. Nieuwpoort,Excelsior,30,0.060,0.878,0.002,0.005,0.559,0.012,0.000,1792
+597,L. Colwill,Chelsea,20,0.983,0.929,0.977,0.095,0.842,0.853,0.943,1786
+598,Messias,Santos,28,0.159,0.174,0.039,0.130,0.380,0.989,0.081,1784
+599,D. Opare,RFC Seraing,32,0.059,0.023,0.752,0.492,0.229,0.334,0.683,1783
+600,F. Rasmussen,Godoy Cruz,31,0.123,0.176,0.201,0.920,0.402,0.476,0.288,1782
+601,J. Hendry,Club Brugge,28,0.685,0.873,0.159,0.113,0.198,0.748,0.729,1780
+602,A. Gravillon,Torino,25,0.189,0.110,0.639,0.698,0.748,0.059,0.644,1778
+603,A. Sylla,RFC Seraing,22,0.141,0.059,0.865,0.788,0.481,0.305,0.462,1771
+604,K. Wimmer,Rapid Wien,30,0.654,0.358,0.995,0.245,0.321,0.996,0.218,1765
+605,J. Laporte,Lorient,29,0.408,0.604,0.528,0.310,0.415,0.341,0.344,1764
+606,Julio Pleguezuelo,Twente,26,0.511,0.441,0.400,0.565,0.943,0.372,0.654,1763
+607,P. Jaeckel,Union Berlin,24,0.549,0.339,0.871,0.361,0.299,0.341,0.758,1760
+608,José Ángel Carmona,Elche,21,0.324,0.239,0.144,0.396,0.002,0.025,0.829,1759
+609,Jorge Cuenca,Villarreal,23,0.885,0.958,0.916,0.710,0.918,0.689,0.688,1759
+610,João Silva,Kortrijk,24,0.077,0.083,0.755,0.993,0.357,0.180,0.632,1749
+611,J. Vanlerberghe,Mechelen,26,0.481,0.047,0.678,0.957,0.483,0.945,0.924,1749
+612,L. Kilian,Köln,23,0.749,0.539,0.555,0.469,0.812,0.667,0.777,1749
+613,A. Rami,Troyes,37,0.274,0.614,0.391,0.428,0.941,0.619,0.390,1747
+614,T. Oermann,Wolfsberger AC,19,0.345,0.250,0.568,0.837,0.982,0.007,0.519,1747
+615,J. Matip,Liverpool,31,0.901,0.689,0.802,0.487,0.920,0.650,0.996,1746
+616,Morato,Benfica,21,0.914,0.889,0.600,0.428,0.753,0.246,0.719,1746
+617,S. Nsoki,Hoffenheim,24,0.562,0.654,0.806,0.571,0.603,0.410,0.534,1741
+618,Chumi,Almería,24,0.253,0.451,0.293,0.223,0.076,0.461,0.390,1732
+619,K. Rekik,Sevilla,28,0.650,0.942,0.124,0.041,0.200,0.914,0.437,1732
+620,G. Medel,Bologna,35,0.919,0.884,0.353,0.718,0.094,0.054,0.055,1728
+621,Rezende,Bahia,28,0.439,0.692,0.538,0.707,0.055,0.408,0.697,1727
+622,D. Oroz,Vitesse,22,0.239,0.165,0.464,0.821,0.159,0.767,0.144,1722
+623,Gil,Corinthians,35,0.527,0.743,0.046,0.039,0.895,0.612,0.031,1714
+624,Lucas Halter,Goiás,23,0.573,0.923,0.536,0.419,0.847,0.115,0.723,1712
+625,M. Tounkara,Vitória Guimarães,21,0.226,0.398,0.183,0.101,0.229,0.238,0.519,1706
+626,R. Burke,Luton Town,26,0.186,0.153,0.952,0.844,0.779,0.809,0.884,1699
+627,J. Handl,Austria Wien,25,0.390,0.136,0.959,0.998,0.484,0.514,0.318,1690
+628,G. Magnani,Hellas Verona,27,0.018,0.017,0.131,0.818,0.111,0.743,0.192,1687
+629,F. Sierralta,Watford,26,0.384,0.501,0.152,0.328,0.016,0.994,0.151,1679
+630,B. Bianchi,Atlético Tucumán,34,0.148,0.029,0.741,0.384,0.039,0.309,0.008,1678
+631,W. Omari,Rennes,23,0.912,0.970,0.710,0.274,0.977,0.888,0.869,1671
+632,K. Naughton,Swansea City,34,0.936,0.869,0.684,0.057,0.109,0.341,0.987,1668
+633,C. Quintana,Rosario Central,35,0.017,0.328,0.125,0.890,0.812,0.825,0.276,1667
+634,F. Uduokhai,Augsburg,25,0.326,0.198,0.487,0.889,0.128,0.379,0.390,1665
+635,A. Callens,Girona,31,0.587,0.834,0.277,0.372,0.221,0.169,0.976,1664
+636,L. Cooper,Leeds United,31,0.357,0.302,0.356,0.615,0.651,0.358,0.055,1646
+637,Kike Salas,Tenerife,21,0.870,0.421,0.776,0.363,0.551,0.598,0.474,1645
+638,G. Hall,Middlesbrough,31,0.078,0.290,0.162,0.647,0.691,0.911,0.238,1637
+639,R. Kluivert,Utrecht,22,0.761,0.510,0.780,0.925,0.961,0.139,0.427,1632
+640,P. Goltz,Colón,38,0.118,0.197,0.242,0.457,0.361,0.211,0.066,1631
+641,M. Horvat,Hartberg,24,0.112,0.034,0.545,0.957,0.257,0.111,0.703,1629
+642,J. Turi,Ried,21,0.247,0.008,0.538,0.896,0.761,0.890,0.097,1624
+643,Borja López,Zulte-Waregem,29,0.426,0.048,0.800,0.948,0.090,0.696,0.246,1622
+644,M. Eerdhuijzen,Sparta Rotterdam,22,0.832,0.729,0.828,0.920,0.661,0.854,0.603,1622
+645,S. van Ottele,Heerenveen,21,0.514,0.209,0.937,0.923,0.227,0.030,0.820,1612
+646,Juanpe,Girona,32,0.550,0.602,0.224,0.028,0.943,0.634,0.097,1605
+647,D. Marcq,Charleroi,34,0.374,0.409,0.382,0.914,0.099,0.187,0.066,1602
+648,Ygor Nogueira,Santa Clara,28,0.095,0.438,0.152,0.744,0.710,0.339,0.288,1602
+649,D. Ćaleta-Car,Southampton,26,0.614,0.521,0.575,0.630,0.409,0.756,0.158,1601
+650,M. Tshibuabua,RFC Seraing,21,0.043,0.060,0.087,0.352,0.359,0.006,0.105,1591
+651,L. Willen,Zulte-Waregem,20,0.138,0.305,0.606,0.918,0.894,0.001,0.928,1585
+652,Vitão,Internacional,23,0.653,0.517,0.247,0.006,0.028,0.729,0.583,1584
+653,P. Barrios,Godoy Cruz,32,0.136,0.063,0.638,0.555,0.970,0.323,0.344,1582
+654,Iago Maidana,América Mineiro,27,0.035,0.189,0.310,0.055,0.516,0.902,0.894,1581
+655,I. Hautekiet,Standard Liège,21,0.735,0.900,0.499,0.923,0.800,0.166,0.858,1572
+656,J. Novillo,Huracán,25,0.197,0.292,0.287,0.146,0.832,0.701,0.258,1572
+657,N. Soldo,Köln,22,0.684,0.363,0.908,0.818,0.480,0.139,0.390,1570
+658,A. Bamba,Angers SCO,33,0.415,0.982,0.293,0.048,0.408,0.139,0.390,1567
+659,F. Calderón,Unión Santa Fe,25,0.028,0.082,0.175,0.428,0.803,0.425,0.011,1559
+660,F. Ceccherini,Hellas Verona,31,0.128,0.230,0.250,0.855,0.118,0.484,0.723,1553
+661,R. Holding,Arsenal,27,0.889,0.756,0.583,0.276,0.825,0.439,0.355,1551
+662,David Carmo,Porto,23,0.591,0.092,0.479,0.007,0.000,0.990,0.011,1546
+663,C. Corvalán,Unión Santa Fe,34,0.156,0.187,0.786,0.741,0.282,0.280,0.309,1546
+664,C. Lema,Lanús,33,0.373,0.250,0.929,0.486,0.509,0.999,0.451,1545
+665,R. Norrington-Davies,Sheffield United,24,0.238,0.262,0.776,0.850,0.952,0.134,0.964,1544
+666,J. Stephens,Southampton,29,0.304,0.327,0.309,0.297,0.573,0.060,0.519,1543
+667,C. Báez,Independiente,33,0.029,0.217,0.706,0.207,0.498,0.427,0.168,1541
+668,Matheus Costa,Marítimo,28,0.220,0.744,0.075,0.455,0.720,0.659,0.105,1534
+669,M. Tambedou,Zulte-Waregem,20,0.491,0.479,0.665,0.492,0.615,0.177,0.011,1532
+670,João Victor,Nantes,24,0.441,0.575,0.224,0.770,0.636,0.661,0.879,1520
+671,M. Wasinski,Kortrijk,19,0.251,0.294,0.674,0.942,0.290,0.065,0.527,1519
+672,A. Mumin,Rayo Vallecano,24,0.460,0.124,0.405,0.276,0.876,0.709,0.569,1519
+673,E. Cornelisse,Vitesse,20,0.306,0.205,0.159,0.333,0.265,0.080,0.592,1517
+674,L. González Pírez,River Plate,31,0.697,0.817,0.786,0.651,0.593,0.784,0.174,1517
+675,J. Kramer,NEC,26,0.520,0.834,0.212,0.733,0.842,0.019,0.127,1506
+676,R. Sykes,Union Saint-Gilloise,24,0.563,0.565,0.287,0.291,0.666,0.972,0.910,1505
+677,Bernardo Espinosa,Girona,33,0.823,0.881,0.368,0.285,0.084,0.526,0.493,1504
+678,M. Caldara,Spezia,29,0.229,0.065,0.561,0.960,0.262,0.086,0.420,1500
+679,N. Colombo,Defensa y Justicia,24,0.252,0.033,0.955,0.632,0.627,0.163,0.992,1497
+680,C. Wooh,Rennes,21,0.707,0.870,0.239,0.328,0.501,0.446,0.318,1493
+681,E. Olivera,Banfield,33,0.049,0.731,0.186,0.725,0.187,0.686,0.174,1492
+682,D. Zagadou,Stuttgart,24,0.897,0.710,0.923,0.469,0.613,0.957,0.127,1490
+683,A. Rébola,Belgrano,34,0.063,0.212,0.492,0.492,0.878,0.288,0.115,1484
+684,M. Lemos,Atlético Mineiro,27,0.771,0.271,0.697,0.113,0.380,0.139,0.914,1480
+685,T. Blokzijl,Groningen,18,0.736,0.398,0.281,0.439,0.747,0.012,0.882,1477
+686,J. Simpson,Cardiff City,26,0.065,0.063,0.345,0.785,0.221,0.452,0.501,1475
+687,M. Friedrich,Borussia M'gladbach,27,0.858,0.513,0.400,0.333,0.258,0.578,0.033,1471
+688,W. Kannemann,Grêmio,32,0.183,0.216,0.269,0.846,0.668,0.946,0.373,1467
+689,Zé Ivaldo,Athletico Paranaense,26,0.269,0.441,0.630,0.211,0.086,0.959,0.333,1451
+690,Josué Sá,Rio Ave,30,0.678,0.793,0.673,0.310,0.025,0.291,0.955,1449
+691,A. Hack,Mainz 05,29,0.283,0.217,0.896,0.959,0.212,0.357,0.181,1449
+692,J. Guilavogui,Wolfsburg,32,0.782,0.723,0.828,0.396,0.048,0.573,0.276,1449
+693,Marllon,Cuiabá,31,0.376,0.967,0.345,0.198,0.731,0.484,0.597,1449
+694,S. van Beek,Heerenveen,28,0.768,0.715,0.900,0.733,0.965,0.092,0.758,1447
+695,Lucas Oliveira,Cruzeiro,27,0.624,0.390,0.920,0.357,0.310,0.616,0.928,1446
+696,A. Maciel,Banfield,26,0.051,0.081,0.963,0.676,0.279,0.341,0.437,1444
+697,E. Ferigra,Paços de Ferreira,24,0.495,0.942,0.189,0.694,0.340,0.139,0.127,1443
+698,T. Rotter,Hartberg,31,0.302,0.141,0.464,0.561,0.733,0.042,0.011,1439
+699,B. Wright,Rotherham United,30,0.358,0.211,0.606,0.269,0.999,0.226,0.011,1438
+700,J. Evans,Leicester City,35,0.866,0.789,0.721,0.276,0.238,0.414,0.127,1434
+701,M. Zanka Jørgensen,Brentford,33,0.280,0.659,0.277,0.099,0.017,0.027,0.238,1432
+702,M. Keane,Everton,30,0.221,0.525,0.742,0.372,0.077,0.961,0.283,1432
+703,L. Bessile,Eupen,24,0.344,0.180,0.606,0.565,0.651,0.121,0.238,1427
+704,Lucas Cunha,Red Bull Bragantino,26,0.557,0.375,0.936,0.223,0.274,0.139,0.390,1412
+705,Léo Pereira,Flamengo,27,0.882,0.758,0.721,0.035,0.012,0.373,0.644,1403
+706,S. Knežević,Charleroi,26,0.355,0.533,0.468,0.977,0.277,0.246,0.849,1399
+707,M. Nastasić,Mallorca,30,0.142,0.461,0.317,0.182,0.464,0.829,0.246,1398
+708,L. Klostermann,RB Leipzig,27,0.894,0.567,0.382,0.492,0.718,0.381,0.288,1397
+709,Luan,Palmeiras,30,0.508,0.521,0.825,0.027,0.013,0.998,0.654,1395
+710,Lucas Beraldo,São Paulo,19,0.947,0.897,0.994,0.217,0.929,0.182,0.690,1392
+711,Ximo Navarro,Fortuna Sittard,33,0.340,0.637,0.327,0.930,0.287,0.256,0.288,1391
+712,Juan Jesus,Napoli,31,0.942,0.946,0.660,0.185,0.797,0.666,0.809,1385
+713,M. Niakhaté,Nottingham Forest,27,0.002,0.057,0.066,0.747,0.286,0.560,0.037,1382
+714,Kanu,Bahia,26,0.503,0.908,0.197,0.187,0.078,0.924,0.575,1380
+715,E. Aguilera,Tigre,33,0.443,0.343,0.463,0.344,0.380,0.963,0.246,1379
+716,D. Sánchez,Tottenham,26,0.802,0.583,0.517,0.725,0.521,0.473,0.493,1378
+717,S. Barreto,Independiente,24,0.042,0.046,0.276,0.914,0.878,0.854,0.018,1378
+718,G. Mercado,Internacional,36,0.747,0.820,0.382,0.105,0.486,0.180,0.144,1371
+719,M. Centurión,Arsenal,24,0.176,0.152,0.590,0.492,0.212,0.690,0.299,1369
+720,Mexer,Estoril,34,0.668,0.497,0.059,0.066,0.542,0.616,0.144,1363
+721,G. Nauber,Go Ahead Eagles,31,0.262,0.650,0.259,0.206,0.296,0.373,0.218,1357
+722,J. Sørensen,Norwich City,25,0.657,0.099,0.756,0.557,0.261,0.470,0.501,1356
+723,L. Balogun,Queens Park Rangers,34,0.058,0.080,0.255,0.694,0.679,0.276,0.795,1355
+724,N. Meriano,Belgrano,22,0.075,0.259,0.561,0.965,0.493,0.593,0.597,1350
+725,M. Torrén,Argentinos Juniors,34,0.837,0.700,0.918,0.081,0.557,0.634,0.597,1346
+726,J. Kerr,Wigan Athletic,26,0.166,0.025,0.585,0.883,0.941,0.777,0.420,1342
+727,B. Valdez,Boca Juniors,30,0.676,0.856,0.324,0.715,0.352,0.139,0.420,1342
+728,S. Bradley,Luton Town,31,0.145,0.045,0.525,0.338,0.300,0.931,0.201,1333
+729,F. Roncaglia,Boca Juniors,36,0.356,0.238,0.299,0.656,0.234,0.902,0.043,1332
+730,E. Ebosse,Udinese,24,0.387,0.619,0.479,0.824,0.625,0.232,0.743,1328
+731,J. Sosa,Bologna,21,0.515,0.191,0.826,0.503,0.072,0.088,0.905,1326
+732,G. Sauro,Huracán,33,0.086,0.689,0.027,0.080,0.773,0.837,0.603,1324
+733,Bruno Viana,Coritiba,28,0.636,0.809,0.614,0.252,0.055,0.002,0.081,1319
+734,B. Diaby,Preston North End,25,0.070,0.445,0.162,0.668,0.928,0.609,0.344,1315
+735,E. Insúa,Racing Club,34,0.941,0.887,0.959,0.128,0.144,0.012,0.982,1315
+736,M. Brizuela,Vélez Sarsfield,26,0.537,0.513,0.858,0.526,0.893,0.427,0.610,1314
+737,H. Dean,Birmingham City,31,0.006,0.134,0.180,0.415,0.901,0.899,0.043,1312
+738,Luciano Castán,Cruzeiro,33,0.581,0.977,0.419,0.019,0.726,0.446,0.644,1312
+739,G. González,Mallorca,28,0.162,0.241,0.536,0.163,0.105,0.182,0.474,1312
+740,Ítalo,Santa Clara,21,0.109,0.339,0.206,0.575,0.064,0.052,0.088,1310
+741,S. Seymor,Excelsior,21,0.150,0.244,0.334,0.487,0.668,0.021,0.088,1310
+742,D. Wouters,Mechelen,26,0.770,0.774,0.146,0.308,0.355,0.062,0.841,1304
+743,R. Edmonds-Green,Huddersfield Town,24,0.012,0.018,0.317,0.179,0.019,0.323,0.328,1289
+744,D. Coppola,Hellas Verona,19,0.089,0.019,0.305,0.972,0.616,0.544,0.214,1287
+745,Sidimar,Goiás,30,0.413,0.302,0.475,0.326,0.187,0.951,0.105,1285
+746,C. Taylor,Stoke City,21,0.533,0.357,0.368,0.133,0.100,0.861,0.994,1284
+747,S. Caulker,Wigan Athletic,31,0.242,0.468,0.018,0.531,0.905,0.169,0.158,1284
+748,N. Romero,Atlético Tucumán,19,0.048,0.159,0.444,0.385,0.078,0.080,0.158,1284
+749,J. Murillo,Sampdoria,31,0.250,0.264,0.142,0.848,0.106,0.286,0.382,1282
+750,F. Fazio,Salernitana,36,0.222,0.228,0.669,0.948,0.908,0.984,0.269,1281
+751,John Nwankwo,Elche,22,0.214,0.812,0.002,0.501,0.177,0.597,0.088,1280
+752,Renê,Marítimo,31,0.431,0.297,0.118,0.396,0.187,0.656,0.018,1279
+753,M. García,Sarmiento,23,0.005,0.013,0.373,0.996,0.070,0.104,0.527,1279
+754,E. Godoy,Belgrano,29,0.104,0.409,0.390,0.396,0.937,0.291,0.736,1278
+755,J. Pombo,Arsenal,22,0.076,0.035,0.230,0.788,0.035,0.328,0.445,1277
+756,Y. Nakayama,Huddersfield Town,26,0.318,0.270,0.550,0.507,0.125,0.814,0.709,1275
+757,L. Ranieri,Fiorentina,24,0.706,0.425,0.731,0.875,0.638,0.074,0.490,1272
+758,Natan,Red Bull Bragantino,22,0.372,0.519,0.654,0.092,0.830,0.244,0.669,1271
+759,D. Ouedraogo,OH Leuven,24,0.331,0.244,0.669,0.758,0.187,0.207,0.158,1270
+760,R. Williams,Liverpool,22,0.101,0.030,0.139,0.146,0.632,0.232,0.043,1269
+761,C. Verdonk,NEC,26,0.795,0.786,0.988,0.893,0.507,0.027,0.632,1269
+762,David Luiz,Flamengo,36,0.704,0.891,0.580,0.011,0.101,0.501,0.946,1268
+763,J. Canale,Lanús,26,0.199,0.129,0.542,0.070,0.835,0.328,0.390,1260
+764,N. Capraro,Barracas Central,25,0.113,0.068,0.490,0.945,0.803,0.299,0.390,1257
+765,M. Barać,Oostende,28,0.217,0.106,0.507,0.813,0.696,0.397,0.097,1255
+766,Léo,Vasco da Gama,27,0.607,0.821,0.221,0.057,0.380,0.929,0.984,1248
+767,G. Velázquez,Newell's Old Boys,32,0.691,0.321,0.557,0.135,0.990,0.902,0.952,1247
+768,K. Fila,Zulte-Waregem,24,0.198,0.160,0.756,0.940,0.022,0.842,0.551,1245
+769,M. Bola,Middlesbrough,25,0.659,0.111,0.910,0.048,0.216,0.560,0.912,1245
+770,H. Marcelin,Cercle Brugge,23,0.004,0.220,0.166,0.784,0.587,0.987,0.052,1237
+771,A. Diallo,RB Leipzig,27,0.778,0.749,0.970,0.151,0.551,0.122,0.872,1233
+772,M. Sarr,Monaco,24,0.893,0.941,0.718,0.524,0.486,0.328,0.753,1230
+773,B. Godeau,Gent,31,0.479,0.665,0.819,0.478,0.761,0.115,0.964,1230
+774,J. Clarke-Salter,Queens Park Rangers,25,0.613,0.592,0.976,0.759,0.521,0.837,0.344,1225
+775,B. Capon,Oostende,35,0.034,0.039,0.890,0.796,0.598,0.118,0.283,1222
+776,A. Ouattara,Genk,22,0.425,0.647,0.115,0.707,0.033,0.047,0.758,1221
+777,G. Piovi,Racing Club,28,0.656,0.479,0.992,0.983,0.203,0.103,0.920,1221
+778,Ricardo Silva,América Mineiro,30,0.019,0.049,0.080,0.626,0.943,0.791,0.229,1218
+779,F. Katelaris,Oostende,26,0.329,0.470,0.824,0.583,0.451,0.422,0.097,1216
+780,D. Dessoleil,Kortrijk,30,0.210,0.422,0.047,0.778,0.112,0.045,0.097,1206
+781,J. van Aken,Heerenveen,28,0.567,0.222,0.853,0.604,0.156,0.756,0.382,1196
+782,J. Mccart,Leyton Orient,25,0.682,0.341,0.986,0.552,0.218,0.935,0.663,1191
+783,M. Bech Sørensen,Groningen,24,0.651,0.409,0.495,0.476,0.737,0.139,0.713,1186
+784,M. Pellegrino,Platense,20,0.007,0.010,0.587,0.930,0.730,0.735,0.437,1168
+785,K. Bonifazi,Bologna,27,0.954,0.714,0.945,0.347,0.528,0.227,0.813,1168
+786,S. Trémoulet,RFC Seraing,23,0.045,0.016,0.287,0.890,0.183,0.619,0.246,1162
+787,A. Dijksteel,Middlesbrough,26,0.432,0.258,0.394,0.361,0.749,0.089,0.972,1159
+788,M. Smets,Sint-Truiden,19,0.366,0.055,0.747,0.967,0.620,0.484,0.483,1156
+789,D. D'Ambrosio,Internazionale,34,0.938,0.799,0.573,0.794,0.609,0.139,0.820,1156
+790,Diego González,Elche,28,0.133,0.263,0.127,0.276,0.238,0.942,0.000,1156
+791,M. Karamarko,Hartberg,25,0.211,0.329,0.612,0.428,0.144,0.690,0.373,1155
+792,Bruno Uvini,Grêmio,32,0.013,0.242,0.033,0.234,0.858,0.172,0.181,1154
+793,Nathan Silva,Atlético Mineiro,26,0.920,0.931,0.842,0.000,0.187,0.812,0.961,1152
+794,V. Chiricheș,Cremonese,33,0.177,0.712,0.157,1.000,0.878,0.057,0.309,1151
+795,S. Núñez,Estudiantes,23,0.332,0.183,0.713,0.951,0.786,0.784,0.445,1151
+796,Jorge Meré,Cádiz,26,0.094,0.426,0.010,0.378,0.932,0.351,0.021,1149
+797,C. Hérelle,Brest,30,0.157,0.621,0.016,0.517,0.053,0.071,0.181,1147
+798,L. Østigård,Napoli,23,0.963,0.928,0.743,0.422,0.923,0.995,0.932,1147
+799,S. Cook,Nottingham Forest,32,0.292,0.122,0.345,0.252,0.479,0.887,0.445,1146
+800,P. Díaz,River Plate,28,0.881,0.785,0.819,0.177,0.574,0.882,0.258,1134
+801,Gabriel Xavier,Bahia,22,0.724,0.370,0.682,0.138,0.431,0.949,0.690,1134
+802,J. Flint,Volendam,22,0.212,0.088,0.510,0.978,0.063,0.484,0.276,1129
+803,R. Arboleda,São Paulo,31,0.843,0.841,0.220,0.387,0.971,0.696,0.115,1122
+804,J. Belocian,Rennes,18,0.753,0.876,0.057,0.165,0.117,0.268,0.749,1121
+805,K. De Winter,Empoli,20,0.316,0.656,0.088,0.443,0.151,0.585,0.258,1120
+806,P. Retsos,Olympiacos Piraeus,24,0.875,0.952,0.189,0.357,0.741,0.560,0.924,1120
+807,David Duarte,Bahia,28,0.423,0.090,0.089,0.059,0.250,0.979,0.451,1119
+808,Éder,América Mineiro,28,0.110,0.561,0.655,0.422,0.492,0.768,0.806,1118
+809,Murillo,Corinthians,20,0.483,0.323,0.528,0.568,0.422,0.970,0.654,1118
+810,Adriel,Austria Lustenau,26,0.248,0.144,0.725,0.478,0.756,0.619,0.115,1116
+811,F. Mansilla,Newell's Old Boys,24,0.929,0.708,0.973,0.636,0.819,0.818,0.959,1113
+812,E. Bailly,Olympique Marseille,29,0.592,0.511,0.205,0.793,0.741,0.314,0.654,1111
+813,W. Boly,Nottingham Forest,32,0.071,0.233,0.317,0.391,0.890,0.964,0.055,1101
+814,T. Blackett,Rotherham United,29,0.241,0.580,0.914,0.060,0.270,0.738,0.402,1088
+815,L. Greiml,Schalke 04,21,0.702,0.513,0.743,0.905,0.042,1.000,0.624,1076
+816,O. Camara,Angers SCO,20,0.844,0.938,0.255,0.733,0.269,0.902,0.174,1074
+817,L. Yoro,Lille,17,0.923,0.973,0.058,0.217,0.380,0.291,0.071,1073
+818,Víctor Chust,Cádiz,23,0.193,0.322,0.379,0.615,0.861,0.099,0.201,1066
+819,W. Boyle,Huddersfield Town,27,0.236,0.112,0.575,0.088,0.119,0.846,0.201,1064
+820,C. Okoli,Atalanta,21,0.147,0.181,0.327,0.971,0.415,0.902,0.344,1056
+821,M. Dárdai,Hertha BSC,21,0.008,0.002,0.507,0.701,0.035,0.034,0.144,1040
+822,I. Vázquez,Platense,25,0.047,0.007,0.737,0.575,0.469,0.549,0.276,1040
+823,L. Magallán,Elche,29,0.134,0.369,0.030,0.350,0.496,0.232,0.066,1033
+824,P. Kimpembe,PSG,27,0.811,1.000,0.152,0.487,0.193,0.071,0.736,1032
+825,N. Murru,Sampdoria,28,0.164,0.146,0.470,0.474,0.134,0.011,0.355,1029
+826,C. Söyüncü,Leicester City,27,0.739,0.312,0.730,0.871,0.913,0.943,0.849,1017
+827,N. Aké,Man City,28,0.976,0.981,0.862,0.153,0.656,0.725,0.858,3899
+828,J. Hato,Ajax,17,0.931,0.899,0.958,0.551,0.134,0.109,0.954,2067
+829,Average,Club,27,0.528,0.489,0.534,0.506,0.467,0.499,0.590,2513`;
+
+
+
+    const dataArray = csvData.split('\n').map(line => line.split(','));
+
+const colorClasses = ['result-color-blue', 'result-color-pink', 'result-color-orange', 'result-color-green', 'result-color-bleu', 'result-color-rose', 'result-color-1', 'result-color-2', 'result-color-3', 'result-color-4', 'result-color-5', 'result-color-6', 'result-color-7', 'result-color-8', 'result-color-9', 'result-color-10', 'result-color-11', 'result-color-12', 'result-color-13', 'result-color-14', 'result-color-15', 'result-color-16', 'result-color-17', 'result-color-18', 'result-color-19', 'result-color-20', 'result-color-21', 'result-color-22', 'result-color-23', 'result-color-24', 'result-color-25', 'result-color-26', 'result-color-27', 'result-color-28', 'result-color-29', 'result-color-30', 'result-color-31', 'result-color-32', 'result-color-33', 'result-color-34', 'result-color-35', 'result-color-36', 'result-color-37', 'result-color-38', 'result-color-39', 'result-color-40', 'result-color-41', 'result-color-42', 'result-color-43', 'result-color-44', 'result-color-45', 'result-color-46', 'result-color-47', 'result-color-48'];
+
+
+    function removeSpecialChars(str) {
+      return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    }
+
+    function search(query) {
+      const results = dataArray.filter(data =>
+        removeSpecialChars(data[1].toLowerCase()).includes(removeSpecialChars(query.toLowerCase()))
+      );
+      return results.length > 0 ? results[0] : null;
+    }
+
+
+function createTable(teamName, teamIndex, color) {
+  const resultsTable = document.getElementById('resultsTable');
+
+  const headerNames = [
+  ];
+
+  // Check if table headers exist
+  const headersExist = resultsTable.querySelector('th') !== null;
+
+  const table = headersExist ? resultsTable.querySelector('table') : document.createElement('table');
+  table.classList.add('metrics-table');
+
+  if (!headersExist) {
+    // Create the table header
+    const headerRow = document.createElement('tr');
+  for (let i = 1; i < headerNames.length; i++) {
+  const th = document.createElement('th');
+  th.textContent = headerNames[i];
+  headerRow.appendChild(th);
+}
+// Add a separate table header for the "x" column
+const xHeader = document.createElement('th');
+xHeader.textContent = '';
+headerRow.appendChild(xHeader);
+    table.appendChild(headerRow);
+  }
+
+
+
+
+const teamData = dataArray[teamIndex];
+const dataRow = document.createElement('tr');
+for (let i = 1; i <= 11; i++) {
+  if (i === 1 || i === 2 || i === 3 || i === 11) {
+    const td = document.createElement('td');
+    if (i === 11) {
+      td.textContent = teamData[i] + ' min';
+    } else {
+      td.textContent = teamData[i] + ',';
+    }
+    td.classList.add(color);
+    dataRow.appendChild(td);
+  }
+}
+
+// Add a separate table cell for the "x" column
+const xCell = document.createElement('td');
+const xButton = document.createElement('button');
+xButton.textContent = 'x';
+xButton.classList.add('x-button');
+xCell.classList.add('x-cell');
+xButton.addEventListener('click', function () {
+  dataRow.remove(); // Remove the corresponding row from the table
+  const radarPolygons = document.querySelectorAll(`.radarPolygon.${color}`);
+  const radarLines = document.querySelectorAll(`.radarLines.${color}`);
+  const radarCircles = document.querySelectorAll(`.radarCircle.${color}`);
+
+  radarPolygons.forEach((polygon) => polygon.remove()); // Remove radar polygons with the specified color
+  radarLines.forEach((line) => line.remove()); // Remove radar lines with the specified color
+  radarCircles.forEach((circle) => circle.remove()); // Remove radar circles with the specified color
+});
+
+xCell.appendChild(xButton);
+dataRow.appendChild(xCell);
+
+table.appendChild(dataRow);
+
+  if (!headersExist) {
+    resultsTable.appendChild(table);
+  }
+
+      const combResults = dataArray[teamIndex].join(', ');
+      console.log(combResults);
+
+
+
+      const outerRadius = 150;
+      const center = [0, 0];
+      const angles = [0, 2 * Math.PI / 7, 4 * Math.PI / 7, 6 * Math.PI / 7, 8 * Math.PI / 7, 10 * Math.PI / 7, 12 * Math.PI / 7];
+
+      function axisValueToCartesian(axis, value) {
+        let angle = angles[axis - 1];
+        angle += (2 * Math.PI / 7) * 0.2;
+        const x = 150 * value * Math.cos(angle);
+        const y = 150 * value * Math.sin(angle);
+        return { x, y };
+      }
+
+      const svg = document.querySelector('.radar');
+      const radarWrapper = svg.appendChild(document.createElementNS('http://www.w3.org/2000/svg', 'g'));
+      radarWrapper.setAttribute('transform', 'translate(231.77,225.77)');
+      radarWrapper.innerHTML = '';
+
+      const data = [];
+      const rowCols = combResults.split(',');
+      for (let i = 4; i < 11; i++) {
+        data.push({ axis: i - 3, value: parseFloat(rowCols[i]) });
+      }
+
+      const points = data.map(({ axis, value }) => {
+        const { x, y } = axisValueToCartesian(axis, value);
+        return `${x},${y}`;
+      }).join(' ');
+
+   const polyline = document.createElementNS('http://www.w3.org/2000/svg', 'polyline');
+  polyline.setAttribute('class', `radarLines ${color}`); // Add the color class to the polyline
+  polyline.setAttribute('points', `${points} ${points.split(' ')[0]}`);
+  polyline.setAttribute('stroke-width', '3');
+  polyline.setAttribute('fill', 'none');
+  radarWrapper.appendChild(polyline);
+
+  const polygon = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
+  polygon.setAttribute('class', `radarPolygon ${color}`); // Add the color class to the polygon
+  polygon.setAttribute('points', points);
+  polygon.style.fillOpacity = '0.2';
+  radarWrapper.appendChild(polygon);
+
+  data.forEach(({ axis, value }) => {
+    const { x, y } = axisValueToCartesian(axis, value);
+    const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+    circle.setAttribute('class', `radarCircle ${color}`); // Add the color class to the circle
+circle.style.fillOpacity = '0.86'; // Set the opacity to 1 (fully opaque)
+    circle.setAttribute('r', '6');
+    circle.setAttribute('cx', x);
+    circle.setAttribute('cy', y);
+    radarWrapper.appendChild(circle);
+  });
+    }
+
+let searchCounter = 0;
+
+function createTableForTeam1() {
+  const searchInput = document.getElementById('searchInput1');
+  const searchButton = document.getElementById('searchButton1');
+  const resultsTable = document.getElementById('resultsTable');
+
+
+  const teamNames = new Set(); // Keep track of unique team names
+
+  const teamNamesList = document.createElement('ul');
+teamNamesList.style.fontFamily = 'Arial, sans-serif'; 
+teamNamesList.style.listStyleType = 'none'; // Remove the bullet points
+teamNamesList.style.paddingLeft = '9px'; // Adjust the padding to move it further left
+ resultsTable.appendChild(teamNamesList);
+
+
+  let searchCounter = 0; // Initialize search counter
+
+  searchButton.addEventListener('click', function () {
+    const searchQuery = searchInput.value;
+    const results = search(searchQuery);
+
+    if (results) {
+      const teamId = parseInt(results[0]); // Parse the team ID from the results
+
+      const teamName = results[1] + ' (' + results[2] + ', ' + results[3] + ') - ' + results[11] + ' min';
+      const color = colorClasses[searchCounter % colorClasses.length]; // Get the color class based on the search counter
+
+      if (!teamNames.has(teamName)) {
+
+        const teamNameItem = document.createElement('li');
+        teamNameItem.textContent = teamName;
+        teamNameItem.classList.add(color); // Apply the color class to the team name
+
+        
+createTable(teamName, teamId - 1, color); // Pass the team ID and color to createTable
+searchCounter++;
+
+      }
+    } 
+    searchInput.value = "";
+
+      // Update the matching names
+      updateMatchingNames();
+  });
+ 
+
+}
+
+
+createTableForTeam1();
+
+
+
+
+  </script>
+
+ <script>
+
+    // Function to toggle dark mode
+    function toggleDarkMode() {
+      const body = document.querySelector("body");
+      body.classList.toggle("dark-mode");
+
+      // Store the user's preference in local storage
+      const isDarkMode = body.classList.contains("dark-mode");
+      localStorage.setItem("darkMode", isDarkMode);
+    }
+
+    // Check if user has a stored preference for dark mode
+    const storedDarkMode = localStorage.getItem("darkMode");
+
+    if (storedDarkMode === "true") {
+      const body = document.querySelector("body");
+      body.classList.add("dark-mode");
+    }
+
+  </script>
+
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>	<br><br>
+	
+
+
+<div id="taboola-below-article-thumbnails"></div>
+<script type="text/javascript">
+  window._taboola = window._taboola || [];
+  _taboola.push({
+    mode: 'alternating-thumbnails-a',
+    container: 'taboola-below-article-thumbnails',
+    placement: 'Below Article Thumbnails',
+    target_type: 'mix'
+  });
+</script>	
+
+	<script type="text/javascript">
+  window._taboola = window._taboola || [];
+  _taboola.push({flush: true});
+</script>
+	
+
+
+</body>
+</html>
