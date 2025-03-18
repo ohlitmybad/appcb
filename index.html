@@ -880,48 +880,58 @@ svg.radar > g {
   const chartContainer = document.querySelector('.screenshotcontainer');
   const isDarkMode = document.body.classList.contains('dark-mode');
   
-  html2canvas(chartContainer, {
-    scale: 2,
-    backgroundColor: isDarkMode ? '#0F0F0E' : '#FFFFFF',
-    allowTaint: true,
-    useCORS: true,
-    logging: false,
-    foreignObjectRendering: false,
-    imageTimeout: 0,
-    onclone: function(clonedDoc) {
-      // Hide similar players table
-      const similarPlayersContainer = clonedDoc.getElementById('similarPlayersContainer');
-      if (similarPlayersContainer) {
-        similarPlayersContainer.style.display = 'none';
-      }
-      
-      // Hide everything above results table
-      const positionSwitcher = clonedDoc.querySelector('.position-switcher-container');
-      const searchContainer = clonedDoc.querySelector('.search-container');
-      if (positionSwitcher) positionSwitcher.style.display = 'none';
-      if (searchContainer) searchContainer.style.display = 'none';
-      
-      // Fix SVG positioning
-      const radarSVG = clonedDoc.querySelector('.radar');
-      if (radarSVG) {
-        radarSVG.style.display = 'block';
-        radarSVG.style.margin = '0 auto';
+  try {
+    // Ensure the element exists
+    if (!chartContainer) {
+      throw new Error('screenshotcontainer element not found');
+    }
+    
+    const canvas = await html2canvas(chartContainer, {
+      width: 468, // Fixed width like in working example
+      height: chartContainer.offsetHeight + 12, // Add padding like working example
+      x: -10,  // Position adjustment from working example
+      y: -10,  // Position adjustment from working example
+      scale: window.devicePixelRatio || 2,
+      backgroundColor: isDarkMode ? '#0F0F0E' : '#FFFFFF',
+      allowTaint: true,
+      useCORS: true,
+      logging: false,
+      foreignObjectRendering: false,
+      imageTimeout: 0,
+      onclone: function(clonedDoc) {
+        // Your existing DOM manipulations
+        const similarPlayersContainer = clonedDoc.getElementById('similarPlayersContainer');
+        if (similarPlayersContainer) {
+          similarPlayersContainer.style.display = 'none';
+        }
         
-        // Ensure transform is properly applied to SVG's inner group
-        const svgGroup = radarSVG.querySelector('g');
-        if (svgGroup) {
-          svgGroup.setAttribute('transform', 'translate(195.5, 195.5)');
+        const positionSwitcher = clonedDoc.querySelector('.position-switcher-container');
+        const searchContainer = clonedDoc.querySelector('.search-container');
+        if (positionSwitcher) positionSwitcher.style.display = 'none';
+        if (searchContainer) searchContainer.style.display = 'none';
+        
+        // Simplified SVG handling
+        const radarSVG = clonedDoc.querySelector('.radar');
+        if (radarSVG) {
+          radarSVG.style.display = 'block';
+          radarSVG.style.margin = '0 auto';
         }
       }
-    }
-  }).then(canvas => {
-    const link = document.createElement('a');
-    link.href = canvas.toDataURL('image/png');
-    link.download = 'DataMB Screenshot.png';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  });
+    });
+    
+    // Use timeout to ensure iOS has time to process
+    setTimeout(() => {
+      canvas.toBlob(blob => {
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = 'DataMB Screenshot.png';
+        link.click();
+      }, 'image/png');
+    }, 100);
+  } catch (error) {
+    console.error('Error in takeScreenshot:', error);
+    // Handle errors appropriately
+  }
 }
 
   // Function to toggle dark mode
