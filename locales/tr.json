@@ -1,0 +1,17 @@
+{
+  "search": {
+    "placeholder2": "Stoper adı girin..."
+  },
+  "radar": {
+    "aerial": "Hava%",
+    "duel": "Savunma düello%",
+    "possWon": "Top kazanma",
+    "progPasses": "Hücum pası",
+    "fwdPass": "İleri pas%",
+    "passes": "Paslar",
+    "carrying": "Top taşıma"
+  },
+  "similar": {
+    "to": "Benzer veri"
+  }
+} 
