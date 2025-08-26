@@ -1,0 +1,17 @@
+{
+  "search": {
+    "placeholder2": "Chercher un défenseur central..."
+  },
+  "radar": {
+    "aerial": "% Aérien",
+    "duel": "% Duel déf",
+    "possWon": "Poss gagnées",
+    "progPasses": "Passes prog",
+    "fwdPass": "Passes av%",
+    "passes": "Passes",
+    "carrying": "Courses"
+  },
+  "similar": {
+    "to": "Données similaires à"
+  }
+} 

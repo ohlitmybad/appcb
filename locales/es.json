@@ -1,0 +1,17 @@
+{
+  "search": {
+    "placeholder2": "Introduce nombre de central..."
+  },
+  "radar": {
+    "aerial": "Aéreo%",
+    "duel": "Duelo def%",
+    "possWon": "Pos ganada",
+    "progPasses": "Pases prog",
+    "fwdPass": "Pase adelante%",
+    "passes": "Pases",
+    "carrying": "Conducción"
+  },
+  "similar": {
+    "to": "Datos similares a"
+  }
+} 
