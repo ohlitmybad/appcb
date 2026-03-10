@@ -5,7 +5,7 @@
   "radar": {
     "aerial": "Kopfball%",
     "duel": "Def. Duelle%",
-    "possWon": "Balleroberungen",
+    "possWon": "Ballgew.",
     "progPasses": "Prog. Pässe",
     "fwdPass": "Vorw. Pass%",
     "passes": "Pässe",
@@ -21,7 +21,7 @@
     "passescompleted": "Pässe gespielt",
     "forwardpasscompletion": "Vorwärtspass-Genauigkeit %",
     "progressivepassescompleted": "Progressive Pässe",
-    "possessionswon": "Balleroberungen",
+    "possessionswon": "Ballgew.",
     "defensiveduelswon": "Defensive Duelle gewonnen %",
     "aerialduelswon": "Kopfballduelle gewonnen %",
     "progressivecarries": "Progressive Läufe",
