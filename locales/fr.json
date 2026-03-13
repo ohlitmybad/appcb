@@ -1,0 +1,30 @@
+{
+  "search": {
+    "placeholder2": "Chercher un défenseur central..."
+  },
+  "radar": {
+    "aerial": "% Aérien",
+    "duel": "% Duel déf",
+    "possWon": "Poss gagnées",
+    "progPasses": "Passes prog",
+    "fwdPass": "Passes av%",
+    "passes": "Passes",
+    "carrying": "Courses"
+  },
+  "similar": {
+    "to": "Données similaires à"
+  },
+  "header": {
+    "percentiles": "Centiles",
+    "clickforinfo": "Cliquez sur un en-tête pour voir le nom complet de la métrique",
+    "percentilesvstop7leagues": "Centiles parmi 7 grands championnats",
+    "passescompleted": "Passes réussies",
+    "forwardpasscompletion": "Précision des passes vers l'avant %",
+    "progressivepassescompleted": "Passes progressives réussies",
+    "possessionswon": "Possessions gagnées",
+    "defensiveduelswon": "Duels défensifs gagnés %",
+    "aerialduelswon": "Duels aériens gagnés %",
+    "progressivecarries": "Courses progressives",
+    "minutesplayed": "Minutes jouées"
+  }
+} 

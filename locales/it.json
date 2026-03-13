@@ -1,0 +1,30 @@
+{
+  "search": {
+    "placeholder2": "Inserisci nome del difensore centrale..."
+  },
+  "radar": {
+    "aerial": "Aerei%",
+    "duel": "Duelli dif.%",
+    "possWon": "Palloni recup.",
+    "progPasses": "Pass. prog.",
+    "fwdPass": "Pass. av.%",
+    "passes": "Passaggi",
+    "carrying": "Conduzioni"
+  },
+  "similar": {
+    "to": "Dati simili a"
+  },
+  "header": {
+    "percentiles": "Percentili",
+    "clickforinfo": "Clicca su un'intestazione per il nome completo della metrica",
+    "percentilesvstop7leagues": "Percentili vs Top 7 Leghe",
+    "passescompleted": "Passaggi completati",
+    "forwardpasscompletion": "Precisione passaggi in avanti %",
+    "progressivepassescompleted": "Passaggi progressivi completati",
+    "possessionswon": "Palloni recuperati",
+    "defensiveduelswon": "Duelli difensivi vinti %",
+    "aerialduelswon": "Duelli aerei vinti %",
+    "progressivecarries": "Conduzioni progressive",
+    "minutesplayed": "Minuti giocati"
+  }
+}
